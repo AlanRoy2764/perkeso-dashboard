@@ -11,7 +11,6 @@ The site is set to `noindex` — share the URL directly; it shouldn't surface in
 - `index.html` — landing page linking to each report.
 - `loe-by-age-group.html` — Loss of Employment claims by 5-year age band, last 9 quarters (Q1 2024 – Q1 2026), with a trendline chart.
 - `perkeso-q1-dashboard.html` — Q1 dashboard across LOE / vacancy / jobseeker / placement.
-- `perkeso-q1-dashboard-email.html` — inline-styled, table-based version of the Q1 dashboard for email rendering.
 
 ## Source data
 

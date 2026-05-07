@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Malaysia Job Market — Q1 2024-2026 · PERKESO LMX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:        #f3f1ec;
+    --card:      #fbfaf6;
+    --border:    #e3dfd2;
+    --border-2:  #cdc9bb;
+    --strip:     #d6d2c2;
+    --ink:       #15161a;
+    --ink-2:     #54544f;
+    --ink-3:     #8a897e;
+    --accent:    #4f5d36;
+    --accent-2:  #6c7d4a;
+    --warn:      #a44a3f;
+    --warn-soft: #c46a5b;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg); }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.45;
+    font-feature-settings: "ss01", "cv11";
+  }
+  .frame { max-width: 1180px; margin: 0 auto; padding: 0 36px; }
+
+  /* ────── nav ────── */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 22px 0; border-bottom: 1px solid var(--border);
+    font-size: 13px; color: var(--ink-2);
+  }
+  nav .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; }
+  nav .brand .dot { width: 8px; height: 8px; border-radius: 50%; background: #54a05a; box-shadow: 0 0 0 3px #54a05a22; }
+  nav .links { display: flex; gap: 28px; }
+  nav .links a { color: var(--ink-2); text-decoration: none; }
+  nav .links a:hover { color: var(--ink); }
+  nav .pill {
+    padding: 7px 14px; background: var(--accent); color: #fff;
+    border-radius: 4px; font-weight: 500; font-size: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ────── hero ────── */
+  .hero { padding: 64px 0 28px; }
+  .hero .eyebrow {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--ink-3); margin-bottom: 28px; font-weight: 500;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 7vw, 92px);
+    line-height: 0.96;
+    letter-spacing: -0.035em;
+    font-weight: 800;
+    max-width: 1100px;
+  }
+  .hero h1 .muted { color: var(--ink-3); }
+
+  /* ────── topline strip ────── */
+  .strip {
+    margin-top: 44px;
+    background: var(--strip);
+    border-radius: 4px;
+    padding: 56px 44px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 56px;
+    position: relative;
+  }
+  .strip::before {
+    content: "Q1 2024 → 2025 → 2026";
+    position: absolute; top: 16px; right: 24px;
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: #6f6f63;
+  }
+  .kpi { color: var(--ink); }
+  .kpi .label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: #4f4f48; margin-bottom: 18px; font-weight: 600;
+  }
+  .kpi .v {
+    font-size: 56px; font-weight: 800; line-height: 0.95;
+    letter-spacing: -0.035em;
+  }
+  .kpi .v small { font-size: 18px; font-weight: 600; color: #6a6a5e; margin-left: 4px; vertical-align: 0.25em; }
+  .kpi .delta {
+    margin-top: 14px; font-size: 13px; font-weight: 500;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .kpi.bad  .delta { color: var(--warn); }
+  .kpi.bad-soft .delta { color: var(--warn-soft); }
+  .kpi.good .delta { color: var(--accent); }
+  .kpi .spark { margin-top: 22px; height: 36px; width: 100%; }
+
+  /* ────── about / takeaway ────── */
+  .takeaway {
+    padding: 60px 0 36px;
+    display: grid; grid-template-columns: 1.25fr 1fr;
+    gap: 56px; border-top: 1px solid var(--border); margin-top: 44px;
+  }
+  .takeaway h2 {
+    font-size: clamp(32px, 3.4vw, 46px);
+    line-height: 1.06; letter-spacing: -0.02em; font-weight: 700;
+  }
+  .takeaway h2 .muted { color: var(--ink-3); }
+  .takeaway-stats {
+    display: grid; grid-template-columns: 1fr 1fr;
+    column-gap: 32px; row-gap: 28px;
+    border-left: 1px solid var(--border-2); padding-left: 32px;
+  }
+  .takeaway-stats h3 {
+    grid-column: 1 / -1;
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--ink-2); font-weight: 600; margin-bottom: 4px;
+  }
+  .stat .num {
+    font-size: 42px; font-weight: 700; color: var(--accent);
+    letter-spacing: -0.025em; line-height: 1;
+  }
+  .stat .num small { font-size: 16px; vertical-align: 0.35em; margin-left: 2px; font-weight: 600; color: var(--accent-2); }
+  .stat .lbl {
+    font-size: 12.5px; color: var(--ink-2); margin-top: 6px; line-height: 1.35;
+  }
+
+  /* ────── charts ────── */
+  section.charts { padding: 36px 0 48px; }
+  .charts-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+  }
+  .charts-head h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+  .charts-head .axis-note { font-size: 12px; color: var(--ink-3); }
+  .chart-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .chart-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 22px 22px 18px;
+  }
+  .chart-card h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 4px; }
+  .chart-card .sub { font-size: 12.5px; color: var(--ink-2); margin-bottom: 18px; }
+  .chart-card svg { width: 100%; display: block; }
+
+  /* ────── industry breakdown ────── */
+  section.industry {
+    padding: 48px 0; border-top: 1px solid var(--border);
+  }
+  .industry-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 28px; padding-bottom: 18px; border-bottom: 1px solid var(--border);
+  }
+  .industry-head h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.01em; }
+  .industry-head .legend { display: flex; gap: 18px; font-size: 12px; color: var(--ink-2); }
+  .legend i { display: inline-block; width: 14px; height: 10px; margin-right: 6px; vertical-align: -1px; }
+  .industry-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .ind-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 22px;
+  }
+  .ind-card h3 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-2); font-weight: 600; margin-bottom: 18px;
+  }
+  .ind-row { padding: 10px 0; border-bottom: 1px solid var(--border); }
+  .ind-row:last-child { border-bottom: none; }
+  .ind-row .name {
+    font-size: 13px; font-weight: 500; margin-bottom: 8px;
+    display: flex; justify-content: space-between;
+  }
+  .ind-row .name .delta {
+    font-size: 11px; font-weight: 500; padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .ind-row .name .delta.up { background: #f3dad5; color: var(--warn); }
+  .ind-row .name .delta.down { background: #d8ddc8; color: var(--accent); }
+  .ind-row .bars { display: grid; grid-template-columns: 28px 1fr 60px; gap: 8px; align-items: center; padding: 2px 0; font-size: 11px; color: var(--ink-3); }
+  .ind-row .bars .yr { font-variant-numeric: tabular-nums; }
+  .ind-row .bars .v  { text-align: right; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+  .ind-row .bar { height: 8px; border-radius: 1px; }
+  .b-2024 { background: #d6d2c2; }
+  .b-2025 { background: var(--accent-2); }
+  .b-2026 { background: var(--accent); }
+
+  /* ────── insights tiles ────── */
+  section.insights { padding: 56px 0; border-top: 1px solid var(--border); }
+  .insights-head { display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px; margin-bottom: 36px; }
+  .insights-head h2 {
+    font-size: clamp(28px, 3vw, 38px); font-weight: 700;
+    letter-spacing: -0.015em; line-height: 1.1;
+  }
+  .insights-head h2 .muted { color: var(--ink-3); }
+  .insights-head p { font-size: 14px; color: var(--ink-2); line-height: 1.55; padding-top: 6px; }
+  .insights-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 36px 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 36px;
+  }
+  .tile h3 {
+    font-size: 15.5px; font-weight: 700; margin-bottom: 8px; line-height: 1.2;
+  }
+  .tile .ico {
+    width: 26px; height: 26px; margin-bottom: 14px;
+    color: var(--ink); stroke: currentColor; fill: none;
+    stroke-width: 1.6;
+  }
+  .tile p { font-size: 13.5px; color: var(--ink-2); line-height: 1.55; }
+
+  /* ────── conclusion ────── */
+  section.closing {
+    padding: 56px 0;
+    border-top: 1px solid var(--border);
+    display: grid; grid-template-columns: 1.6fr 1fr; gap: 56px;
+  }
+  .closing h2 {
+    font-size: clamp(28px, 3vw, 40px); line-height: 1.1;
+    letter-spacing: -0.02em; font-weight: 700;
+    margin-bottom: 22px;
+  }
+  .closing h2 .muted { color: var(--ink-3); }
+  .closing p { font-size: 15px; color: var(--ink-2); line-height: 1.65; margin-bottom: 14px; }
+  .closing p strong { color: var(--ink); font-weight: 600; }
+  .closing aside { border-left: 1px solid var(--border-2); padding-left: 32px; }
+  .closing aside h3 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--ink-2); margin-bottom: 16px; font-weight: 600;
+  }
+  .closing aside dl { display: grid; gap: 14px; font-size: 13px; }
+  .closing aside dt { font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+  .closing aside dd { color: var(--ink-2); }
+
+  .cta-row {
+    margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;
+  }
+  .btn {
+    background: var(--accent); color: #fff; padding: 12px 22px;
+    border-radius: 4px; font-weight: 500; font-size: 13.5px;
+    text-decoration: none; display: inline-block;
+  }
+  .btn.secondary {
+    background: transparent; color: var(--ink); border: 1px solid var(--border-2);
+  }
+
+  footer {
+    padding: 28px 0 56px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--ink-3);
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+
+  @media (max-width: 980px) {
+    .strip, .chart-row, .industry-grid, .insights-grid { grid-template-columns: 1fr 1fr; }
+    .takeaway, .insights-head, section.closing { grid-template-columns: 1fr; gap: 32px; }
+    .takeaway-stats, .closing aside { border-left: none; padding-left: 0; border-top: 1px solid var(--border-2); padding-top: 24px; }
+  }
+  @media (max-width: 600px) {
+    .strip, .chart-row, .industry-grid, .insights-grid, .takeaway-stats { grid-template-columns: 1fr; }
+    .frame { padding: 0 20px; }
+    nav .links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="frame">
+
+  <!-- nav -->
+  <nav>
+    <div class="brand"><span class="dot"></span> Malaysia Labour Market Pulse</div>
+    <div class="links">
+      <a href="#topline">Topline</a>
+      <a href="#breakdown">Breakdown</a>
+      <a href="#findings">Findings</a>
+      <a href="#methodology">Methodology</a>
+    </div>
+    <div class="pill">Q1 2024 – 2026</div>
+  </nav>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="eyebrow">PERKESO LMX · public statistics · pulled 2026-05-01</div>
+    <h1>
+      Malaysia's job<br>
+      market is contracting.
+      <span class="muted">Services <br>is bearing the brunt of a quiet AI inflection.</span>
+    </h1>
+  </section>
+
+  <!-- topline strip -->
+  <section class="strip" id="topline">
+
+    <div class="kpi bad">
+      <div class="label">Loss of Employment · Q1 2026</div>
+      <div class="v">24,025</div>
+      <div class="delta">↑ +48.5% YoY · +77.5% vs 2024</div>
+      <svg class="spark" id="spark-loe" viewBox="0 0 240 36" preserveAspectRatio="none"></svg>
+    </div>
+
+    <div class="kpi bad">
+      <div class="label">Job Placements · Q1 2026</div>
+      <div class="v">31,769</div>
+      <div class="delta">↓ −25.2% YoY · −18.8% vs 2024</div>
+      <svg class="spark" id="spark-plc" viewBox="0 0 240 36" preserveAspectRatio="none"></svg>
+    </div>
+
+    <div class="kpi bad-soft">
+      <div class="label">Active Job Vacancies · Q1 2026</div>
+      <div class="v">328,490</div>
+      <div class="delta">↓ −12.1% YoY · −13.2% vs 2024</div>
+      <svg class="spark" id="spark-vac" viewBox="0 0 240 36" preserveAspectRatio="none"></svg>
+    </div>
+
+  </section>
+
+  <!-- takeaway / stats -->
+  <section class="takeaway">
+    <h2>
+      Across all three labour-market<br>signals, Q1 2026 is the
+      <span class="muted">weakest quarter Malaysia has logged in the post-pandemic recovery —
+      and the divergence between sectors is sharpening.</span>
+    </h2>
+    <div class="takeaway-stats">
+      <h3>Headline shifts · 2024 → 2026</h3>
+      <div class="stat">
+        <div class="num">+78<small>%</small></div>
+        <div class="lbl">rise in EIS job-loss<br>claims since Q1 2024</div>
+      </div>
+      <div class="stat">
+        <div class="num">−13<small>%</small></div>
+        <div class="lbl">drop in active vacancies<br>posted on MyFutureJobs</div>
+      </div>
+      <div class="stat">
+        <div class="num">−19<small>%</small></div>
+        <div class="lbl">fewer career-fair<br>placements completed</div>
+      </div>
+      <div class="stat">
+        <div class="num">+120<small>%</small></div>
+        <div class="lbl">jump in services-sector<br>EIS claims (2024 → 2026)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- charts -->
+  <section class="charts">
+    <div class="charts-head">
+      <h2>Three measures, one direction.</h2>
+      <div class="axis-note">All values are Q1 (Jan–Mar) totals · Source: PERKESO LMX</div>
+    </div>
+    <div class="chart-row">
+
+      <div class="chart-card">
+        <h3>Loss of Employment</h3>
+        <div class="sub">EIS claims approved · all industries</div>
+        <svg id="bar-loe" viewBox="0 0 320 220" preserveAspectRatio="none"></svg>
+      </div>
+
+      <div class="chart-card">
+        <h3>Job Placements</h3>
+        <div class="sub">PERKESO career-fair placements</div>
+        <svg id="bar-plc" viewBox="0 0 320 220" preserveAspectRatio="none"></svg>
+      </div>
+
+      <div class="chart-card">
+        <h3>Active Vacancies</h3>
+        <div class="sub">MyFutureJobs · listings advertised</div>
+        <svg id="bar-vac" viewBox="0 0 320 220" preserveAspectRatio="none"></svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- industry breakdown -->
+  <section class="industry" id="breakdown">
+    <div class="industry-head">
+      <h2>Where the divergence lives.</h2>
+      <div class="legend">
+        <span><i class="b-2024"></i>Q1 2024</span>
+        <span><i class="b-2025"></i>Q1 2025</span>
+        <span><i class="b-2026"></i>Q1 2026</span>
+      </div>
+    </div>
+    <div class="industry-grid" id="industry-grid"></div>
+  </section>
+
+  <!-- insights tiles -->
+  <section class="insights" id="findings">
+    <div class="insights-head">
+      <h2>What the data is telling us, <span class="muted">six findings that matter.</span></h2>
+      <p>The aggregate numbers tell a "weaker market" story. The cross-sector pattern tells a more specific one — and it's the pattern, not the totals, that's most consistent with what an AI-led productivity shift looks like at the labour-market level.</p>
+    </div>
+    <div class="insights-grid">
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 19V5M3 19h18M7 15l4-6 4 4 6-10"/></svg>
+        <h3>Services collapsed.</h3>
+        <p>Services accounted for ~80% of the rise in EIS claims and the entire decline in placements. Vacancies in Services fell 50,000 between 2025 and 2026 — a 20% drop in one year.</p>
+      </div>
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="11" rx="1"/><path d="M7 9V5a3 3 0 016 0v4M21 14H3"/></svg>
+        <h3>Manufacturing held the line.</h3>
+        <p>The only Main Industry where vacancies <em>grew</em> across all three years (+29% since 2024). Placements peaked in 2025 then plateaued — physical-skill demand is decoupling from the white-collar slowdown.</p>
+      </div>
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+        <h3>Construction crashed harder than headline.</h3>
+        <p>Vacancies down 42% over two years — roughly triple the all-industry decline. EIS claims doubled. This is more macro (project pipeline + funding) than AI, but it's compounding the white-collar squeeze.</p>
+      </div>
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <h3>The cycle is getting faster.</h3>
+        <p>2024 → 2025 was a flat year. The whole shift happened in the last 12 months: +49% LOE, −25% placements, −12% vacancies. Whatever's driving this hit decisively after Q1 2025.</p>
+      </div>
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M12 3v18M5 9l7-6 7 6M5 15l7 6 7-6"/></svg>
+        <h3>The vacancy-to-placement gap widened.</h3>
+        <p>Vacancies fell 12%, but placements fell 25% — nearly double. Either matching is breaking down (skills mismatch) or career-fair channels are losing ground to direct AI-mediated hiring. Worth tracking.</p>
+      </div>
+
+      <div class="tile">
+        <svg class="ico" viewBox="0 0 24 24"><path d="M2 12h4M18 12h4M12 2v4M12 18v4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>
+        <h3>The pattern fits the AI thesis — but isn't proof.</h3>
+        <p>Services down, Manufacturing stable, fastest-shifting in 2025/2026 — that's textbook displacement of routine cognitive work. Subsidy reform, MYR weakness, and post-pandemic baselines also fit. Read it as a strong correlation, not causation.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- conclusion -->
+  <section class="closing" id="methodology">
+    <div>
+      <h2>Three years on, Malaysia's labour market is rewriting <span class="muted">where work concentrates — and Services is the canary.</span></h2>
+      <p>From Q1 2024 to Q1 2026, the headline numbers are unambiguous. <strong>Job losses are up 78%. Vacancies are down 13%. Placements are down 19%.</strong> What makes Q1 2026 different from any prior post-COVID quarter isn't just that all three moved in the wrong direction — it's that <strong>they moved in concert, and almost entirely through the Services sector.</strong></p>
+      <p>The signature is unusual. In a classic demand recession, Construction and Manufacturing crater first. Here, Manufacturing actively expanded vacancies (+29% over the window) while Services — the part of the economy most exposed to generative-AI-augmented work — contracted on every measure.</p>
+      <p>That's the same shape the IMF, OECD, and ILO have flagged in their 2025 outlooks: the first labour-market measurable from AI adoption isn't mass unemployment, it's a <strong>quiet thinning of mid-skill cognitive roles</strong> showing up as fewer postings, slower hiring, and concentrated displacement in services-heavy economies. Malaysia's PERKESO data through Q1 2026 fits that template more cleanly than any other macro story we tested.</p>
+      <p>The honest read: the AI inflection isn't the only thing happening — diesel subsidy reform, ringgit pressure, and a weaker China demand pulse are all in the mix. But the cross-sector divergence is the strongest single signal, and it's getting stronger every quarter. <strong>Q2 2026 is the one to watch.</strong></p>
+      <div class="cta-row">
+        <a class="btn" href="https://lmx.perkeso.gov.my/statistics/" target="_blank" rel="noopener">View source data ↗</a>
+        <a class="btn secondary" href="#topline">Back to topline</a>
+      </div>
+    </div>
+    <aside>
+      <h3>Methodology</h3>
+      <dl>
+        <div>
+          <dt>Source</dt>
+          <dd>PERKESO Labour Market Exchange (LMX) public statistics — three datasets: Loss of Employment (ST/LOE/PUB/72), Job Placement (ST/PLM/PUB/71), Job Vacancy (ST/VAC/PUB/69).</dd>
+        </div>
+        <div>
+          <dt>Period</dt>
+          <dd>Q1 = January–March of each year. LOE & Placement filtered by <code>Quarter=1</code>. Vacancy has no quarter field; filtered by <code>Month Rank ∈ {1,2,3}</code>.</dd>
+        </div>
+        <div>
+          <dt>Scope</dt>
+          <dd>Malaysia-wide, all 21 MSIC industries rolled up to the 5 Main Industry groups. "Revision Stage" rows (PERKESO's pending-classification placeholder) excluded from sector charts.</dd>
+        </div>
+        <div>
+          <dt>Caveats</dt>
+          <dd>Vacancy "Total" sums Active + Closed listings posted in the window — a volume measure, not net new openings. Placements reflect career-fair throughput only, not the whole hiring market.</dd>
+        </div>
+        <div>
+          <dt>Refresh</dt>
+          <dd>Source dataset last refreshed 2026-03-07; row-level data covers through March 2026.</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+
+  <footer>
+    <div>Draft dashboard · built from PERKESO LMX public data via the <code>perkeso-lmx</code> CLI.</div>
+    <div>Generated 2026-05-01</div>
+  </footer>
+
+</div>
+
+<script>
+const DATA = {
+  years: [2024, 2025, 2026],
+  loe:        [13535,  16174,  24025],
+  plc:        [39136,  42490,  31769],
+  vac:        [378604, 373826, 328490],
+  industries: [
+    "Services",
+    "Manufacturing",
+    "Construction",
+    "Agriculture, Forestry & Fishing",
+    "Mining & Quarrying",
+  ],
+  loeIndustry: {
+    "Services":                          [7535, 10207, 16573],
+    "Manufacturing":                     [4765, 4062, 4868],
+    "Construction":                      [1114, 1672, 2298],
+    "Agriculture, Forestry & Fishing":   [112, 175, 206],
+    "Mining & Quarrying":                [9, 58, 58],
+  },
+  plcIndustry: {
+    "Services":                          [28837, 28758, 18606],
+    "Manufacturing":                     [7410, 10377, 9185],
+    "Construction":                      [1379, 1905, 1662],
+    "Agriculture, Forestry & Fishing":   [216, 386, 283],
+    "Mining & Quarrying":                [178, 166, 185],
+  },
+  vacIndustry: {
+    "Services":                          [251452, 251642, 201624],
+    "Manufacturing":                     [62592,  71995,  80502],
+    "Construction":                      [34136,  29815,  19715],
+    "Agriculture, Forestry & Fishing":   [27650,  18348,  24579],
+    "Mining & Quarrying":                [2774,   2026,   2024],
+  },
+};
+
+const COLORS = ["#d6d2c2", "#6c7d4a", "#4f5d36"];
+const SVG = "http://www.w3.org/2000/svg";
+
+function fmt(n) {
+  if (n >= 1000000) return (n/1000000).toFixed(1) + "M";
+  if (n >= 1000)    return (n/1000).toFixed(n >= 10000 ? 0 : 1) + "k";
+  return n.toString();
+}
+function fmtFull(n) {
+  return n.toLocaleString();
+}
+
+// ─── KPI sparklines (3 mini bars in topline strip) ─────────────────────────
+function sparkBars(id, values) {
+  const svg = document.getElementById(id);
+  const W = 240, H = 36;
+  const max = Math.max(...values);
+  const n = values.length;
+  const gap = 10;
+  const bw = (W - gap*(n-1)) / n;
+  values.forEach((v, i) => {
+    const h = (v/max) * (H - 2);
+    const r = document.createElementNS(SVG, "rect");
+    r.setAttribute("x", i * (bw + gap));
+    r.setAttribute("y", H - h);
+    r.setAttribute("width", bw);
+    r.setAttribute("height", h);
+    r.setAttribute("fill", "#54544f");
+    r.setAttribute("opacity", 0.35 + 0.32 * i);
+    svg.appendChild(r);
+  });
+}
+sparkBars("spark-loe", DATA.loe);
+sparkBars("spark-plc", DATA.plc);
+sparkBars("spark-vac", DATA.vac);
+
+// ─── 3 main bar charts ─────────────────────────────────────────────────────
+function bigBars(id, values) {
+  const svg = document.getElementById(id);
+  const W = 320, H = 220;
+  const padT = 28, padB = 30, padX = 14;
+  const max = Math.max(...values) * 1.08;
+  const n = values.length;
+  const gap = 28;
+  const bw = (W - padX*2 - gap*(n-1)) / n;
+  // baseline
+  const base = document.createElementNS(SVG, "line");
+  base.setAttribute("x1", padX); base.setAttribute("x2", W-padX);
+  base.setAttribute("y1", H-padB); base.setAttribute("y2", H-padB);
+  base.setAttribute("stroke", "#cdc9bb"); base.setAttribute("stroke-width", "1");
+  svg.appendChild(base);
+
+  values.forEach((v, i) => {
+    const h  = (v/max) * (H - padT - padB);
+    const x  = padX + i * (bw + gap);
+    const y  = H - padB - h;
+    const r  = document.createElementNS(SVG, "rect");
+    r.setAttribute("x", x); r.setAttribute("y", y);
+    r.setAttribute("width", bw); r.setAttribute("height", h);
+    r.setAttribute("fill", COLORS[i]);
+    r.setAttribute("rx", "1");
+    svg.appendChild(r);
+    // value
+    const t = document.createElementNS(SVG, "text");
+    t.setAttribute("x", x + bw/2); t.setAttribute("y", y - 8);
+    t.setAttribute("text-anchor", "middle");
+    t.setAttribute("font-size", "13");
+    t.setAttribute("font-weight", "700");
+    t.setAttribute("fill", "#15161a");
+    t.textContent = fmtFull(v);
+    svg.appendChild(t);
+    // year label
+    const yr = document.createElementNS(SVG, "text");
+    yr.setAttribute("x", x + bw/2); yr.setAttribute("y", H-10);
+    yr.setAttribute("text-anchor", "middle");
+    yr.setAttribute("font-size", "11");
+    yr.setAttribute("fill", "#8a897e");
+    yr.setAttribute("letter-spacing", "0.06em");
+    yr.textContent = "Q1 " + DATA.years[i];
+    svg.appendChild(yr);
+  });
+}
+bigBars("bar-loe", DATA.loe);
+bigBars("bar-plc", DATA.plc);
+bigBars("bar-vac", DATA.vac);
+
+// ─── industry breakdown cards ──────────────────────────────────────────────
+function pct(a, b) {
+  if (!a) return null;
+  return ((b - a) / a) * 100;
+}
+function renderIndustryCard(title, dict) {
+  const card = document.createElement("div");
+  card.className = "ind-card";
+  card.innerHTML = `<h3>${title}</h3>`;
+  // sort by latest year desc
+  const sorted = DATA.industries.slice().sort((a, b) => dict[b][2] - dict[a][2]);
+  const max = Math.max(...sorted.flatMap(k => dict[k]));
+  sorted.forEach(name => {
+    const vals = dict[name];
+    const change = pct(vals[0], vals[2]);
+    const sign = change >= 0 ? "up" : "down";
+    const arrow = change >= 0 ? "↑" : "↓";
+    const row = document.createElement("div");
+    row.className = "ind-row";
+    row.innerHTML = `
+      <div class="name">
+        <span>${name}</span>
+        <span class="delta ${sign}">${arrow} ${Math.abs(change).toFixed(0)}% (24→26)</span>
+      </div>
+      ${vals.map((v, i) => `
+        <div class="bars">
+          <span class="yr">'${24+i}</span>
+          <div class="bar b-${DATA.years[i]}" style="width:${(v/max*100).toFixed(1)}%"></div>
+          <span class="v">${fmtFull(v)}</span>
+        </div>
+      `).join("")}
+    `;
+    card.appendChild(row);
+  });
+  return card;
+}
+const grid = document.getElementById("industry-grid");
+grid.appendChild(renderIndustryCard("Loss of Employment · by industry", DATA.loeIndustry));
+grid.appendChild(renderIndustryCard("Job Placements · by industry", DATA.plcIndustry));
+grid.appendChild(renderIndustryCard("Active Vacancies · by industry", DATA.vacIndustry));
+</script>
+
+</body>
+</html>

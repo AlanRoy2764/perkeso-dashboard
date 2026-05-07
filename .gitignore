@@ -1,0 +1,11 @@
+# Local build scripts — kept out of the published repo
+build_perkeso_email_draft.py
+build_perkeso_newsletter_draft.py
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+__pycache__/
+*.pyc

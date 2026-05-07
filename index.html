@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>PERKESO LMX — Reports</title>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f3a8a;
+    --hover: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .container { max-width: 760px; margin: 0 auto; padding: 48px 24px; }
+  header { margin-bottom: 32px; }
+  h1 { font-size: 26px; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 14px; margin: 0; }
+  .reports { display: grid; gap: 12px; }
+  a.report {
+    display: block;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    text-decoration: none;
+    color: var(--ink);
+    transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+  a.report:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(31,58,138,0.08);
+  }
+  .report-title { font-size: 16px; font-weight: 600; margin: 0 0 4px; }
+  .report-desc { font-size: 13px; color: var(--muted); margin: 0; }
+  .footer { color: var(--muted); font-size: 12px; margin-top: 32px; text-align: center; }
+  .footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PERKESO LMX — Reports</h1>
+      <p class="subtitle">Static dashboards built from <a href="https://lmx.perkeso.gov.my/">lmx.perkeso.gov.my</a> public statistics.</p>
+    </header>
+
+    <div class="reports">
+      <a class="report" href="loe-by-age-group.html">
+        <p class="report-title">Loss of Employment by Age Group — 9 Quarters</p>
+        <p class="report-desc">EIS claims by 5-year age band, Q1 2024 – Q1 2026. Trendline chart + quarterly table.</p>
+      </a>
+      <a class="report" href="perkeso-q1-dashboard.html">
+        <p class="report-title">Malaysia Job Market — Q1 2024–2026</p>
+        <p class="report-desc">Q1 dashboard across LOE, vacancy, jobseeker and placement.</p>
+      </a>
+      <a class="report" href="perkeso-q1-dashboard-email.html">
+        <p class="report-title">Malaysia Job Market — Q1 2024–2026 (email layout)</p>
+        <p class="report-desc">Inline-styled, table-based version of the Q1 dashboard intended for email rendering.</p>
+      </a>
+    </div>
+
+    <p class="footer">Source: PERKESO LMX · <code>datamart.v_stat_*</code></p>
+  </div>
+</body>
+</html>

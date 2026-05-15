@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Salary Range — Malaysia Labour Market · 2023 Q2 – 2026 Q1</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f3a8a;
+    --hover: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; }
+  header.page-head { margin-bottom: 16px; }
+  h1 { font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  .source { color: var(--muted); font-size: 12px; }
+  .source a { color: var(--accent); }
+  .dim-nav {
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 14px 0; margin: 20px 0 24px;
+  }
+  .dim-nav a { color: var(--muted); text-decoration: none; }
+  .dim-nav a:hover { color: var(--accent); }
+  .dim-nav a.active { color: var(--ink); font-weight: 600; }
+  .explainer {
+    background: #eef2ff; border-left: 3px solid var(--accent);
+    padding: 14px 18px; border-radius: 4px;
+    font-size: 13.5px; color: #1e293b; margin-bottom: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .card-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 16px;
+  }
+  .card-head h2 { font-size: 17px; font-weight: 600; margin: 0; }
+  .card-head .meta { font-size: 12px; color: var(--muted); }
+  .chart-wrap { position: relative; height: 440px; }
+  .table-toggle { margin-top: 14px; }
+  .table-toggle summary {
+    cursor: pointer; font-size: 13px; color: var(--accent);
+    user-select: none;
+  }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 9px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; font-weight: 500; }
+  thead th {
+    background: #f9fafb; font-size: 11px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--line);
+  }
+  tbody tr:hover { background: var(--hover); }
+  tbody tr.total td { font-weight: 700; border-top: 2px solid var(--line); background: #fafafa; }
+  td.zero { color: #cbd5e1; }
+  .notes {
+    margin-top: 8px; font-size: 12.5px; color: var(--muted);
+    background: #fff7ed; border-left: 3px solid #d97706;
+    padding: 14px 18px; border-radius: 4px;
+  }
+  .footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 28px; }
+  .footer a { color: var(--muted); }
+  @media (max-width: 720px) {
+    .container { padding: 20px 16px 32px; }
+    .chart-wrap { height: 360px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-head">
+      <h1>Salary Range · Malaysia Labour Market</h1>
+      <p class="subtitle">12 quarters · 2023 Q2 → 2026 Q1 · LOE / Vacancy / Placement</p>
+      <p class="source">
+        Source: <a href="https://lmx.perkeso.gov.my/">PERKESO LMX</a> ·
+        warehouse: <a href="https://docs.google.com/spreadsheets/d/11IXCbodlq4ywV9nksagMFTWg_iejKI9FrCDIY0wLIHM/edit">perkeso-data-analysis-2026</a> ·
+        <a href="index.html">All dimensions</a>
+      </p>
+    </header>
+
+    <nav class="dim-nav"><a href="gender.html">Gender</a> · <a href="age-group.html">Age Group</a> · <a href="industry.html">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html">Education Level</a> · <a href="salary.html" class="active">Salary Range</a></nav>
+
+    <div class="explainer">Salary band. Vacancy = OFFERED salary; LOE/Placement = REALISED salary. Compare distributions, not levels directly.</div>
+
+    <section class="card" data-dataset="loe">
+      <header class="card-head">
+        <h2>Loss of Employment (EIS claims)</h2>
+        <span class="meta">11 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_loe"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_loe"></table>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" data-dataset="vacancy">
+      <header class="card-head">
+        <h2>Job Vacancies (MyFutureJobs)</h2>
+        <span class="meta">11 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_vacancy"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_vacancy"></table>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" data-dataset="placement">
+      <header class="card-head">
+        <h2>Job Placements (Career Fairs)</h2>
+        <span class="meta">11 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_placement"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_placement"></table>
+        </div>
+      </details>
+    </section>
+
+    <div class="notes">
+      <strong>Data quality:</strong> Rows where the dimension value is
+      <code>Revision Stage</code> (PERKESO's placeholder for records being
+      revised) are excluded. In Placement this is material: education
+      ≈17%, salary ≈8.5%, state ≈6.5%, industry ≈4.5% of the window total.
+      LOE and Vacancy exclusions are &lt;1%. Charts therefore under-report
+      Placement volumes for those dimensions.
+    </div>
+
+    <p class="footer">Generated by perkeso-dashboard ·
+      <a href="https://github.com/alanroy2764/perkeso-dashboard">source on GitHub</a>
+    </p>
+  </div>
+
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[947, 1345, 1315, 879, 738, 903, 1045, 1099, 951, 828, 866, 957], [1920, 2433, 2576, 2197, 1773, 1988, 2357, 2375, 2430, 2863, 3169, 3750], [2517, 3151, 3783, 3324, 3404, 4179, 4467, 3908, 3938, 4514, 5166, 6122], [1558, 1882, 2440, 2316, 1924, 2623, 2351, 2638, 2856, 2945, 3484, 4001], [1077, 1342, 1557, 1631, 1462, 1772, 1989, 1847, 1985, 2022, 2455, 2627], [512, 748, 941, 889, 832, 1233, 1312, 1265, 1525, 1662, 2170, 2192], [704, 832, 1005, 851, 710, 1068, 1215, 1165, 1430, 1625, 1660, 1790], [342, 359, 521, 395, 362, 513, 502, 585, 762, 734, 740, 810], [265, 310, 464, 291, 319, 382, 438, 477, 752, 576, 580, 601], [139, 181, 252, 191, 174, 237, 250, 276, 381, 360, 367, 338], [264, 279, 479, 349, 347, 392, 499, 440, 719, 729, 860, 634]], "totals": [11873, 29831, 48473, 31018, 21766, 15281, 14055, 6625, 5455, 3146, 5991]}, "vacancy": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[90283, 26478, 21545, 16715, 14716, 15651, 28651, 17001, 13569, 12477, 11560, 10793], [257751, 248109, 199774, 180447, 170724, 184429, 195708, 170645, 172251, 147023, 164396, 157572], [85045, 90447, 74231, 100785, 88459, 94479, 95448, 103172, 99608, 98849, 91590, 84365], [29854, 35248, 27136, 28782, 30315, 29348, 26810, 28303, 29040, 30299, 31942, 25392], [9633, 12332, 12644, 12662, 17003, 16535, 13104, 15273, 14950, 14798, 13260, 14145], [9653, 10256, 9782, 11523, 19900, 13296, 12766, 14048, 15425, 14190, 13585, 12928], [6801, 7564, 8469, 9899, 8909, 8342, 8284, 8445, 8640, 9323, 7857, 8933], [4755, 5994, 5905, 7739, 7058, 8113, 5556, 5938, 6026, 5890, 5184, 5917], [4324, 4717, 7386, 6467, 9764, 7463, 6940, 7923, 6097, 5141, 4951, 5730], [1767, 2259, 3069, 2519, 2418, 2376, 1894, 1921, 1930, 1577, 1634, 1646], [986, 1332, 972, 1066, 1060, 1129, 876, 1157, 824, 731, 702, 1069]], "totals": [279439, 2248829, 1106478, 352469, 166339, 157352, 101466, 74075, 76903, 25010, 11904]}, "placement": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[11250, 13650, 4836, 1575, 2954, 7010, 840, 0, 0, 1066, 3446, 371], [20612, 33495, 19438, 22993, 16441, 20452, 14704, 16267, 18696, 13877, 10507, 10014], [15726, 24632, 10599, 8305, 7725, 15619, 10704, 12542, 18466, 26064, 16412, 10863], [6145, 9179, 4219, 2505, 2284, 7877, 7798, 4260, 4254, 10082, 5755, 3225], [2551, 4015, 1848, 1533, 1156, 4040, 3977, 1494, 1796, 4652, 2620, 1478], [2918, 3914, 1783, 455, 487, 11890, 2582, 789, 1289, 2558, 1529, 1123], [205, 271, 281, 414, 378, 381, 342, 800, 1041, 3300, 1334, 803], [111, 136, 148, 254, 201, 191, 155, 233, 358, 314, 273, 225], [83, 131, 109, 156, 155, 174, 123, 174, 348, 269, 241, 146], [51, 45, 51, 98, 95, 101, 69, 127, 177, 121, 111, 98], [68, 93, 91, 167, 159, 128, 83, 109, 264, 183, 169, 142]], "totals": [46998, 217496, 177657, 67583, 31160, 31317, 9550, 2599, 2109, 1144, 1656]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "count"}</script>
+<script>
+  const P = JSON.parse(document.getElementById("payload").textContent);
+  const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
+
+  function buildChart(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const buckets = d.buckets;
+    const matrix = d.matrix;
+
+    // hidden-by-default rules: explicit hiddenBuckets, OR ranked beyond top N
+    const hide = new Set(P.hiddenBuckets || []);
+    const visibleCount = P.topNVisible;
+
+    const datasets = buckets.map((b, i) => {
+      const hidden = hide.has(b) || (visibleCount !== null && i >= visibleCount);
+      return {
+        label: b,
+        data: matrix[i],
+        borderColor: P.palette[i % P.palette.length],
+        backgroundColor: P.palette[i % P.palette.length],
+        borderWidth: 2,
+        pointRadius: 2.5,
+        pointHoverRadius: 5,
+        tension: 0.25,
+        hidden,
+      };
+    });
+
+    new Chart(document.getElementById(`chart_${ds}`), {
+      type: "line",
+      data: { labels: P.quarters, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            position: "right",
+            labels: { boxWidth: 12, boxHeight: 12, font: { size: 11.5 } },
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
+            },
+          },
+        },
+        scales: {
+          y: { beginAtZero: true,
+            title: { display: true, text: P.axis },
+            ticks: { callback: (v) => v.toLocaleString() },
+            grid: { color: "#eef0f3" } },
+          x: { title: { display: true, text: "Quarter" }, grid: { display: false } },
+        },
+      },
+    });
+  }
+
+  function buildTable(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const table = document.getElementById(`table_${ds}`);
+
+    let thead = "<thead><tr><th>Bucket</th>";
+    P.quarters.forEach(q => thead += `<th>${q}</th>`);
+    thead += "<th>Total</th></tr></thead>";
+
+    let tbody = "<tbody>";
+    const colTotals = new Array(P.quarters.length).fill(0);
+    let grand = 0;
+    d.buckets.forEach((b, i) => {
+      const row = d.matrix[i];
+      let rowSum = 0;
+      let html = `<tr><td>${b}</td>`;
+      row.forEach((v, j) => {
+        colTotals[j] += v; rowSum += v;
+        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+      });
+      grand += rowSum;
+      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      tbody += html;
+    });
+    let trow = "<tr class='total'><td>TOTAL</td>";
+    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+    trow += `<td>${grand.toLocaleString()}</td></tr>`;
+    tbody += trow + "</tbody>";
+    table.innerHTML = thead + tbody;
+  }
+
+  Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
+</script>
+</body>
+</html>

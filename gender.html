@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Gender — Malaysia Labour Market · 2023 Q2 – 2026 Q1</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f3a8a;
+    --hover: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; }
+  header.page-head { margin-bottom: 16px; }
+  h1 { font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  .source { color: var(--muted); font-size: 12px; }
+  .source a { color: var(--accent); }
+  .dim-nav {
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 14px 0; margin: 20px 0 24px;
+  }
+  .dim-nav a { color: var(--muted); text-decoration: none; }
+  .dim-nav a:hover { color: var(--accent); }
+  .dim-nav a.active { color: var(--ink); font-weight: 600; }
+  .explainer {
+    background: #eef2ff; border-left: 3px solid var(--accent);
+    padding: 14px 18px; border-radius: 4px;
+    font-size: 13.5px; color: #1e293b; margin-bottom: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .card-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 16px;
+  }
+  .card-head h2 { font-size: 17px; font-weight: 600; margin: 0; }
+  .card-head .meta { font-size: 12px; color: var(--muted); }
+  .chart-wrap { position: relative; height: 440px; }
+  .table-toggle { margin-top: 14px; }
+  .table-toggle summary {
+    cursor: pointer; font-size: 13px; color: var(--accent);
+    user-select: none;
+  }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 9px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; font-weight: 500; }
+  thead th {
+    background: #f9fafb; font-size: 11px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--line);
+  }
+  tbody tr:hover { background: var(--hover); }
+  tbody tr.total td { font-weight: 700; border-top: 2px solid var(--line); background: #fafafa; }
+  td.zero { color: #cbd5e1; }
+  .notes {
+    margin-top: 8px; font-size: 12.5px; color: var(--muted);
+    background: #fff7ed; border-left: 3px solid #d97706;
+    padding: 14px 18px; border-radius: 4px;
+  }
+  .footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 28px; }
+  .footer a { color: var(--muted); }
+  @media (max-width: 720px) {
+    .container { padding: 20px 16px 32px; }
+    .chart-wrap { height: 360px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-head">
+      <h1>Gender · Malaysia Labour Market</h1>
+      <p class="subtitle">12 quarters · 2023 Q2 → 2026 Q1 · LOE / Vacancy / Placement</p>
+      <p class="source">
+        Source: <a href="https://lmx.perkeso.gov.my/">PERKESO LMX</a> ·
+        warehouse: <a href="https://docs.google.com/spreadsheets/d/11IXCbodlq4ywV9nksagMFTWg_iejKI9FrCDIY0wLIHM/edit">perkeso-data-analysis-2026</a> ·
+        <a href="index.html">All dimensions</a>
+      </p>
+    </header>
+
+    <nav class="dim-nav"><a href="gender.html" class="active">Gender</a> · <a href="age-group.html">Age Group</a> · <a href="industry.html">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html">Education Level</a> · <a href="salary.html">Salary Range</a></nav>
+
+    <div class="explainer">Vacancy data does not record gender — only LOE and Placement carry this dimension.</div>
+
+    <section class="card" data-dataset="loe">
+      <header class="card-head">
+        <h2>Loss of Employment (EIS claims)</h2>
+        <span class="meta">2 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_loe"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_loe"></table>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" data-dataset="placement">
+      <header class="card-head">
+        <h2>Job Placements (Career Fairs)</h2>
+        <span class="meta">2 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_placement"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_placement"></table>
+        </div>
+      </details>
+    </section>
+
+    <div class="notes">
+      <strong>Data quality:</strong> Rows where the dimension value is
+      <code>Revision Stage</code> (PERKESO's placeholder for records being
+      revised) are excluded. In Placement this is material: education
+      ≈17%, salary ≈8.5%, state ≈6.5%, industry ≈4.5% of the window total.
+      LOE and Vacancy exclusions are &lt;1%. Charts therefore under-report
+      Placement volumes for those dimensions.
+    </div>
+
+    <p class="footer">Generated by perkeso-dashboard ·
+      <a href="https://github.com/alanroy2764/perkeso-dashboard">source on GitHub</a>
+    </p>
+  </div>
+
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["MALE", "FEMALE"], "ranks": ["", ""], "matrix": [[6062, 7487, 8811, 8076, 7173, 9588, 10106, 9528, 10763, 11436, 13523, 14714], [4324, 5521, 6792, 5459, 5088, 5851, 6453, 6646, 7068, 7540, 8337, 9311]], "totals": [117267, 78390]}, "placement": {"buckets": ["MALE", "FEMALE"], "ranks": ["", ""], "matrix": [[31328, 46997, 23498, 19573, 20674, 43175, 26260, 22024, 26947, 33146, 25316, 16605], [30017, 45587, 21649, 19563, 18299, 36091, 21184, 20466, 24825, 32648, 23226, 15164]], "totals": [335543, 308719]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "claims / placements"}</script>
+<script>
+  const P = JSON.parse(document.getElementById("payload").textContent);
+  const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
+
+  function buildChart(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const buckets = d.buckets;
+    const matrix = d.matrix;
+
+    // hidden-by-default rules: explicit hiddenBuckets, OR ranked beyond top N
+    const hide = new Set(P.hiddenBuckets || []);
+    const visibleCount = P.topNVisible;
+
+    const datasets = buckets.map((b, i) => {
+      const hidden = hide.has(b) || (visibleCount !== null && i >= visibleCount);
+      return {
+        label: b,
+        data: matrix[i],
+        borderColor: P.palette[i % P.palette.length],
+        backgroundColor: P.palette[i % P.palette.length],
+        borderWidth: 2,
+        pointRadius: 2.5,
+        pointHoverRadius: 5,
+        tension: 0.25,
+        hidden,
+      };
+    });
+
+    new Chart(document.getElementById(`chart_${ds}`), {
+      type: "line",
+      data: { labels: P.quarters, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            position: "right",
+            labels: { boxWidth: 12, boxHeight: 12, font: { size: 11.5 } },
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
+            },
+          },
+        },
+        scales: {
+          y: { beginAtZero: true,
+            title: { display: true, text: P.axis },
+            ticks: { callback: (v) => v.toLocaleString() },
+            grid: { color: "#eef0f3" } },
+          x: { title: { display: true, text: "Quarter" }, grid: { display: false } },
+        },
+      },
+    });
+  }
+
+  function buildTable(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const table = document.getElementById(`table_${ds}`);
+
+    let thead = "<thead><tr><th>Bucket</th>";
+    P.quarters.forEach(q => thead += `<th>${q}</th>`);
+    thead += "<th>Total</th></tr></thead>";
+
+    let tbody = "<tbody>";
+    const colTotals = new Array(P.quarters.length).fill(0);
+    let grand = 0;
+    d.buckets.forEach((b, i) => {
+      const row = d.matrix[i];
+      let rowSum = 0;
+      let html = `<tr><td>${b}</td>`;
+      row.forEach((v, j) => {
+        colTotals[j] += v; rowSum += v;
+        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+      });
+      grand += rowSum;
+      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      tbody += html;
+    });
+    let trow = "<tr class='total'><td>TOTAL</td>";
+    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+    trow += `<td>${grand.toLocaleString()}</td></tr>`;
+    tbody += trow + "</tbody>";
+    table.innerHTML = thead + tbody;
+  }
+
+  Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
+</script>
+</body>
+</html>

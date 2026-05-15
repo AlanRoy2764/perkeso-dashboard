@@ -1,6 +1,12 @@
 # Local build scripts — kept out of the published repo
 build_perkeso_email_draft.py
 build_perkeso_newsletter_draft.py
+build_long_format.py
+push_to_sheet.py
+build_html.py
+
+# Local data warehouse intermediates (source of truth lives in the Google Sheet)
+data/
 
 # OS / editor
 .DS_Store

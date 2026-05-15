@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>MSIC Industry (Section) — Malaysia Labour Market · 2023 Q2 – 2026 Q1</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --card: #ffffff;
+    --ink: #1a1a1a;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #1f3a8a;
+    --hover: #f1f5f9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; }
+  header.page-head { margin-bottom: 16px; }
+  h1 { font-size: 28px; font-weight: 700; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+  .source { color: var(--muted); font-size: 12px; }
+  .source a { color: var(--accent); }
+  .dim-nav {
+    font-size: 13px; color: var(--muted);
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 14px 0; margin: 20px 0 24px;
+  }
+  .dim-nav a { color: var(--muted); text-decoration: none; }
+  .dim-nav a:hover { color: var(--accent); }
+  .dim-nav a.active { color: var(--ink); font-weight: 600; }
+  .explainer {
+    background: #eef2ff; border-left: 3px solid var(--accent);
+    padding: 14px 18px; border-radius: 4px;
+    font-size: 13.5px; color: #1e293b; margin-bottom: 24px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .card-head {
+    display: flex; justify-content: space-between; align-items: end;
+    margin-bottom: 16px;
+  }
+  .card-head h2 { font-size: 17px; font-weight: 600; margin: 0; }
+  .card-head .meta { font-size: 12px; color: var(--muted); }
+  .chart-wrap { position: relative; height: 440px; }
+  .table-toggle { margin-top: 14px; }
+  .table-toggle summary {
+    cursor: pointer; font-size: 13px; color: var(--accent);
+    user-select: none;
+  }
+  .table-wrap { overflow-x: auto; margin-top: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+  th, td { padding: 7px 9px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; font-weight: 500; }
+  thead th {
+    background: #f9fafb; font-size: 11px; font-weight: 600;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+    border-bottom: 2px solid var(--line);
+  }
+  tbody tr:hover { background: var(--hover); }
+  tbody tr.total td { font-weight: 700; border-top: 2px solid var(--line); background: #fafafa; }
+  td.zero { color: #cbd5e1; }
+  .notes {
+    margin-top: 8px; font-size: 12.5px; color: var(--muted);
+    background: #fff7ed; border-left: 3px solid #d97706;
+    padding: 14px 18px; border-radius: 4px;
+  }
+  .footer { color: var(--muted); font-size: 12px; text-align: center; margin-top: 28px; }
+  .footer a { color: var(--muted); }
+  @media (max-width: 720px) {
+    .container { padding: 20px 16px 32px; }
+    .chart-wrap { height: 360px; }
+    h1 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-head">
+      <h1>MSIC Industry (Section) · Malaysia Labour Market</h1>
+      <p class="subtitle">12 quarters · 2023 Q2 → 2026 Q1 · LOE / Vacancy / Placement</p>
+      <p class="source">
+        Source: <a href="https://lmx.perkeso.gov.my/">PERKESO LMX</a> ·
+        warehouse: <a href="https://docs.google.com/spreadsheets/d/11IXCbodlq4ywV9nksagMFTWg_iejKI9FrCDIY0wLIHM/edit">perkeso-data-analysis-2026</a> ·
+        <a href="index.html">All dimensions</a>
+      </p>
+    </header>
+
+    <nav class="dim-nav"><a href="gender.html">Gender</a> · <a href="age-group.html">Age Group</a> · <a href="industry.html" class="active">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html">Education Level</a> · <a href="salary.html">Salary Range</a></nav>
+
+    <div class="explainer">21 MSIC 2008 Sections (A–U). Industry labels normalised to the short Vacancy form; the 1-letter MSIC code is the cross-dataset join key. Only the largest 8 sectors per dataset are visible by default.</div>
+
+    <section class="card" data-dataset="loe">
+      <header class="card-head">
+        <h2>Loss of Employment (EIS claims)</h2>
+        <span class="meta">21 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_loe"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_loe"></table>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" data-dataset="vacancy">
+      <header class="card-head">
+        <h2>Job Vacancies (MyFutureJobs)</h2>
+        <span class="meta">21 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_vacancy"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_vacancy"></table>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" data-dataset="placement">
+      <header class="card-head">
+        <h2>Job Placements (Career Fairs)</h2>
+        <span class="meta">21 buckets · 12 quarters</span>
+      </header>
+      <div class="chart-wrap">
+        <canvas id="chart_placement"></canvas>
+      </div>
+      <details class="table-toggle">
+        <summary>Show quarterly table</summary>
+        <div class="table-wrap">
+          <table id="table_placement"></table>
+        </div>
+      </details>
+    </section>
+
+    <div class="notes">
+      <strong>Data quality:</strong> Rows where the dimension value is
+      <code>Revision Stage</code> (PERKESO's placeholder for records being
+      revised) are excluded. In Placement this is material: education
+      ≈17%, salary ≈8.5%, state ≈6.5%, industry ≈4.5% of the window total.
+      LOE and Vacancy exclusions are &lt;1%. Charts therefore under-report
+      Placement volumes for those dimensions.
+    </div>
+
+    <p class="footer">Generated by perkeso-dashboard ·
+      <a href="https://github.com/alanroy2764/perkeso-dashboard">source on GitHub</a>
+    </p>
+  </div>
+
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["Manufacturing", "Wholesale And Retail Trade", "Information And Communication", "Construction", "Administrative And Support Service Activities", "Professional, Scientific And Technical Activities", "Transportation And Storage", "Accommodation And Food Service Activities", "Other Service Activities", "Financial And Insurance/Takaful Activities", "Real Estate Activities", "Agriculture, Forestry And Fishing", "Human Health And Social Work Activities", "Education", "Public Administration And Defence; Compulsory Social Security", "Arts, Entertainment And Recreation", "Water Supply; Sewerage, Waste Management And Remediation Activities", "Mining And Quarrying", "Electricity, Gas, Steam And Air Conditioning Supply", "Activities Of Households As Employers", "Activities Of Extraterritorial Organizations"], "ranks": ["C", "G", "J", "F", "N", "M", "H", "I", "S", "K", "L", "A", "Q", "P", "O", "R", "E", "B", "D", "T", "U"], "matrix": [[2984, 3410, 5496, 4765, 4199, 6328, 6778, 4062, 5388, 5003, 5703, 4871], [1742, 2145, 1914, 2049, 1790, 2105, 2391, 2813, 3052, 3558, 3920, 3965], [554, 902, 1463, 843, 1184, 1442, 1437, 1246, 1655, 1650, 2469, 2310], [810, 920, 727, 1114, 798, 1003, 1238, 1672, 1501, 1486, 2020, 2298], [665, 912, 640, 676, 728, 832, 852, 1268, 1333, 1547, 1894, 2662], [808, 716, 921, 771, 995, 825, 1278, 1282, 1189, 1591, 1630, 1727], [607, 945, 1350, 1090, 700, 880, 670, 771, 602, 887, 796, 2360], [245, 484, 299, 613, 574, 376, 409, 617, 615, 787, 907, 789], [718, 1330, 970, 385, 167, 373, 272, 478, 488, 421, 464, 519], [225, 235, 296, 447, 420, 489, 384, 746, 643, 713, 762, 864], [182, 155, 214, 147, 163, 220, 152, 252, 209, 234, 201, 366], [143, 157, 547, 112, 92, 134, 100, 175, 147, 199, 201, 206], [131, 154, 182, 142, 132, 102, 197, 161, 180, 267, 261, 271], [128, 86, 92, 139, 93, 115, 145, 276, 161, 238, 248, 382], [285, 277, 261, 149, 69, 75, 80, 85, 130, 70, 58, 147], [40, 39, 33, 43, 36, 24, 49, 68, 354, 135, 63, 65], [13, 31, 26, 20, 32, 39, 57, 89, 74, 63, 94, 100], [51, 50, 126, 9, 20, 33, 39, 58, 47, 69, 31, 58], [15, 19, 24, 17, 64, 36, 24, 42, 48, 42, 102, 45], [31, 24, 19, 2, 2, 6, 5, 7, 9, 12, 5, 17], [9, 17, 3, 2, 3, 2, 2, 6, 6, 4, 6, 3]], "totals": [58987, 31444, 17155, 15587, 14009, 13733, 11658, 6715, 6585, 6224, 2495, 2213, 2180, 2103, 1686, 949, 638, 591, 478, 139, 63]}, "vacancy": {"buckets": ["Manufacturing", "Administrative And Support Service Activities", "Construction", "Wholesale And Retail Trade", "Accommodation And Food Service Activities", "Information And Communication", "Professional, Scientific And Technical Activities", "Agriculture, Forestry And Fishing", "Human Health And Social Work Activities", "Financial And Insurance/Takaful Activities", "Transportation And Storage", "Education", "Other Service Activities", "Public Administration And Defence; Compulsory Social Security", "Real Estate Activities", "Arts, Entertainment And Recreation", "Mining And Quarrying", "Electricity, Gas, Steam And Air Conditioning Supply", "Water Supply; Sewerage, Waste Management And Remediation Activities", "Activities Of Households As Employers", "Activities Of Extraterritorial Organizations"], "ranks": ["C", "N", "F", "G", "I", "J", "M", "A", "Q", "K", "H", "P", "S", "O", "L", "R", "B", "D", "E", "T", "U"], "matrix": [[80454, 75891, 65252, 62592, 59911, 66031, 72578, 71995, 83767, 90069, 84759, 80502], [37930, 51065, 37575, 31541, 30216, 30305, 28943, 48329, 42980, 32313, 42634, 36827], [61029, 52731, 39699, 34136, 41729, 37788, 48879, 29815, 32220, 19904, 20777, 19715], [39375, 44740, 37195, 34493, 29640, 25968, 34896, 28922, 31625, 24542, 22827, 30345], [48129, 43115, 28107, 23355, 23154, 25200, 33592, 31294, 28595, 29451, 32209, 22233], [50734, 33329, 25313, 28045, 36613, 31893, 22429, 23452, 26537, 27800, 21386, 24699], [33381, 30684, 26083, 22294, 24685, 23650, 25788, 22344, 27424, 24097, 32261, 26815], [29366, 26548, 31014, 27650, 24133, 33779, 35011, 18348, 15848, 16870, 18740, 24579], [13185, 12815, 15687, 44847, 32204, 25196, 24290, 24829, 10854, 9475, 9330, 9927], [58931, 18688, 15499, 13782, 13857, 16409, 13574, 12245, 15559, 13483, 10164, 10627], [8677, 13165, 12665, 11824, 13995, 20185, 17434, 23601, 21404, 19371, 19143, 10797], [9272, 8956, 9303, 12041, 9826, 9433, 10952, 12207, 11349, 11614, 10757, 11084], [13822, 15946, 10500, 9645, 10982, 17060, 13852, 7444, 4938, 6175, 7480, 5045], [1361, 1956, 2620, 7897, 6384, 2497, 1590, 6544, 2074, 1550, 2484, 5112], [2137, 2772, 4468, 4423, 2727, 3045, 3798, 3221, 2534, 2892, 1563, 2847], [3313, 3233, 3458, 1829, 2184, 4641, 2231, 3034, 3109, 2927, 2110, 1669], [2390, 2677, 1970, 2774, 4200, 2684, 2384, 2026, 1650, 2278, 1555, 2024], [3326, 3583, 2349, 3493, 2313, 3095, 1782, 1332, 2030, 1576, 2346, 1295], [3156, 1738, 1500, 1453, 1152, 1640, 1235, 1642, 3266, 3327, 3164, 1562], [696, 1061, 572, 395, 279, 321, 591, 1126, 511, 524, 733, 693], [188, 43, 84, 95, 142, 341, 208, 76, 86, 60, 239, 47]], "totals": [893801, 450658, 438422, 384568, 368434, 352230, 319506, 301886, 232639, 212818, 192261, 126794, 122889, 42069, 36427, 33738, 28612, 28520, 24835, 7502, 1609]}, "placement": {"buckets": ["Manufacturing", "Wholesale And Retail Trade", "Other Service Activities", "Public Administration And Defence; Compulsory Social Security", "Accommodation And Food Service Activities", "Professional, Scientific And Technical Activities", "Construction", "Transportation And Storage", "Administrative And Support Service Activities", "Education", "Information And Communication", "Human Health And Social Work Activities", "Financial And Insurance/Takaful Activities", "Agriculture, Forestry And Fishing", "Real Estate Activities", "Electricity, Gas, Steam And Air Conditioning Supply", "Arts, Entertainment And Recreation", "Water Supply; Sewerage, Waste Management And Remediation Activities", "Mining And Quarrying", "Activities Of Households As Employers", "Activities Of Extraterritorial Organizations"], "ranks": ["C", "G", "S", "O", "I", "M", "F", "H", "N", "P", "J", "Q", "K", "A", "L", "D", "R", "E", "B", "T", "U"], "matrix": [[12190, 18351, 9037, 7410, 9014, 17153, 9453, 10377, 16287, 20072, 15261, 9185], [8397, 12729, 6935, 5050, 4515, 11211, 6264, 6704, 6529, 7285, 4963, 3333], [7725, 10723, 6990, 2832, 3158, 6123, 2500, 3080, 3055, 4763, 4021, 2401], [4587, 5624, 1011, 11801, 6022, 4568, 1393, 2625, 2526, 4356, 3002, 2408], [4643, 7338, 4123, 2223, 2708, 5266, 3573, 4044, 2609, 3301, 3032, 1675], [4714, 6663, 2933, 1386, 1714, 5523, 2746, 2925, 3201, 4341, 3293, 2021], [3231, 5028, 2101, 1379, 1990, 4657, 2518, 1905, 2853, 3392, 2544, 1662], [2230, 3882, 1758, 1594, 2126, 3561, 3092, 1937, 2078, 2622, 1624, 1045], [1927, 3319, 2490, 768, 1070, 3470, 1813, 1802, 1976, 2771, 1541, 1359], [1868, 2883, 1257, 677, 931, 2122, 1179, 1231, 1482, 2449, 1843, 1082], [1352, 2546, 1246, 769, 1086, 2527, 1719, 1258, 1662, 1887, 1261, 913], [1750, 2564, 1177, 512, 746, 2306, 1036, 1030, 1444, 1949, 1324, 1031], [1271, 2417, 1072, 570, 864, 2254, 2624, 961, 782, 1562, 856, 514], [653, 912, 367, 216, 445, 865, 531, 386, 739, 1231, 656, 283], [441, 827, 414, 169, 377, 976, 479, 277, 393, 531, 288, 210], [387, 533, 245, 150, 162, 398, 321, 200, 716, 347, 183, 152], [413, 644, 323, 121, 156, 352, 235, 339, 233, 454, 277, 150], [363, 545, 326, 137, 125, 305, 222, 197, 302, 280, 313, 184], [126, 338, 180, 178, 105, 520, 325, 166, 445, 388, 133, 185], [294, 306, 228, 32, 92, 160, 98, 85, 83, 205, 125, 84], [180, 174, 42, 46, 39, 205, 70, 63, 96, 205, 81, 44]], "totals": [153790, 83915, 57371, 49923, 44535, 41460, 33260, 27549, 24306, 19004, 18226, 16869, 15747, 7284, 5382, 3794, 3697, 3299, 3089, 1792, 1245]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": 8, "hiddenBuckets": [], "axis": "count"}</script>
+<script>
+  const P = JSON.parse(document.getElementById("payload").textContent);
+  const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
+
+  function buildChart(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const buckets = d.buckets;
+    const matrix = d.matrix;
+
+    // hidden-by-default rules: explicit hiddenBuckets, OR ranked beyond top N
+    const hide = new Set(P.hiddenBuckets || []);
+    const visibleCount = P.topNVisible;
+
+    const datasets = buckets.map((b, i) => {
+      const hidden = hide.has(b) || (visibleCount !== null && i >= visibleCount);
+      return {
+        label: b,
+        data: matrix[i],
+        borderColor: P.palette[i % P.palette.length],
+        backgroundColor: P.palette[i % P.palette.length],
+        borderWidth: 2,
+        pointRadius: 2.5,
+        pointHoverRadius: 5,
+        tension: 0.25,
+        hidden,
+      };
+    });
+
+    new Chart(document.getElementById(`chart_${ds}`), {
+      type: "line",
+      data: { labels: P.quarters, datasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: { mode: "index", intersect: false },
+        plugins: {
+          legend: {
+            position: "right",
+            labels: { boxWidth: 12, boxHeight: 12, font: { size: 11.5 } },
+          },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`,
+            },
+          },
+        },
+        scales: {
+          y: { beginAtZero: true,
+            title: { display: true, text: P.axis },
+            ticks: { callback: (v) => v.toLocaleString() },
+            grid: { color: "#eef0f3" } },
+          x: { title: { display: true, text: "Quarter" }, grid: { display: false } },
+        },
+      },
+    });
+  }
+
+  function buildTable(ds) {
+    const d = P.datasets[ds];
+    if (!d) return;
+    const table = document.getElementById(`table_${ds}`);
+
+    let thead = "<thead><tr><th>Bucket</th>";
+    P.quarters.forEach(q => thead += `<th>${q}</th>`);
+    thead += "<th>Total</th></tr></thead>";
+
+    let tbody = "<tbody>";
+    const colTotals = new Array(P.quarters.length).fill(0);
+    let grand = 0;
+    d.buckets.forEach((b, i) => {
+      const row = d.matrix[i];
+      let rowSum = 0;
+      let html = `<tr><td>${b}</td>`;
+      row.forEach((v, j) => {
+        colTotals[j] += v; rowSum += v;
+        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+      });
+      grand += rowSum;
+      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      tbody += html;
+    });
+    let trow = "<tr class='total'><td>TOTAL</td>";
+    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+    trow += `<td>${grand.toLocaleString()}</td></tr>`;
+    tbody += trow + "</tbody>";
+    table.innerHTML = thead + tbody;
+  }
+
+  Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
+</script>
+</body>
+</html>

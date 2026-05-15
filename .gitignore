@@ -4,6 +4,7 @@ build_perkeso_newsletter_draft.py
 build_long_format.py
 push_to_sheet.py
 build_html.py
+build_joint_analysis.py
 
 # Local data warehouse intermediates (source of truth lives in the Google Sheet)
 data/

@@ -23,7 +23,6 @@ Each page compares LOE / Job Vacancies / Job Placements side-by-side for one dim
 **Other reports**
 
 - `perkeso-q1-dashboard.html` — editorial Q1 dashboard, 3-year snapshot.
-- `loe-by-age-group.html` — original LOE-only deep-dive.
 
 ## Source data
 

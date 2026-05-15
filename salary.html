@@ -68,6 +68,27 @@
   }
   .toggle-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
   .toggle-btn:active { background: #e0e7ff; }
+  .view-toolbar {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 12px; margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .view-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; margin-right: 4px;
+  }
+  .view-btn {
+    font-size: 12px; font-weight: 500; font-family: inherit;
+    padding: 6px 12px; border: 1px solid var(--line);
+    background: #fff; color: var(--ink);
+    border-radius: 4px; cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .view-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
+  .view-btn.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
   .chart-wrap { position: relative; height: 440px; }
   .table-toggle { margin-top: 14px; }
   .table-toggle summary {
@@ -115,6 +136,7 @@
     <nav class="dim-nav"><a href="gender.html">Gender</a> · <a href="age-group.html">Age Group</a> · <a href="industry.html">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html">Education Level</a> · <a href="salary.html" class="active">Salary Range</a></nav>
 
     <div class="explainer">Salary band. Vacancy = OFFERED salary; LOE/Placement = REALISED salary. Compare distributions, not levels directly.</div>
+    
 
     <section class="card" data-dataset="loe">
       <header class="card-head">
@@ -196,7 +218,7 @@
     </p>
   </div>
 
-<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[947, 1345, 1315, 879, 738, 903, 1045, 1099, 951, 828, 866, 957], [1920, 2433, 2576, 2197, 1773, 1988, 2357, 2375, 2430, 2863, 3169, 3750], [2517, 3151, 3783, 3324, 3404, 4179, 4467, 3908, 3938, 4514, 5166, 6122], [1558, 1882, 2440, 2316, 1924, 2623, 2351, 2638, 2856, 2945, 3484, 4001], [1077, 1342, 1557, 1631, 1462, 1772, 1989, 1847, 1985, 2022, 2455, 2627], [512, 748, 941, 889, 832, 1233, 1312, 1265, 1525, 1662, 2170, 2192], [704, 832, 1005, 851, 710, 1068, 1215, 1165, 1430, 1625, 1660, 1790], [342, 359, 521, 395, 362, 513, 502, 585, 762, 734, 740, 810], [265, 310, 464, 291, 319, 382, 438, 477, 752, 576, 580, 601], [139, 181, 252, 191, 174, 237, 250, 276, 381, 360, 367, 338], [264, 279, 479, 349, 347, 392, 499, 440, 719, 729, 860, 634]], "totals": [11873, 29831, 48473, 31018, 21766, 15281, 14055, 6625, 5455, 3146, 5991]}, "vacancy": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[90283, 26478, 21545, 16715, 14716, 15651, 28651, 17001, 13569, 12477, 11560, 10793], [257751, 248109, 199774, 180447, 170724, 184429, 195708, 170645, 172251, 147023, 164396, 157572], [85045, 90447, 74231, 100785, 88459, 94479, 95448, 103172, 99608, 98849, 91590, 84365], [29854, 35248, 27136, 28782, 30315, 29348, 26810, 28303, 29040, 30299, 31942, 25392], [9633, 12332, 12644, 12662, 17003, 16535, 13104, 15273, 14950, 14798, 13260, 14145], [9653, 10256, 9782, 11523, 19900, 13296, 12766, 14048, 15425, 14190, 13585, 12928], [6801, 7564, 8469, 9899, 8909, 8342, 8284, 8445, 8640, 9323, 7857, 8933], [4755, 5994, 5905, 7739, 7058, 8113, 5556, 5938, 6026, 5890, 5184, 5917], [4324, 4717, 7386, 6467, 9764, 7463, 6940, 7923, 6097, 5141, 4951, 5730], [1767, 2259, 3069, 2519, 2418, 2376, 1894, 1921, 1930, 1577, 1634, 1646], [986, 1332, 972, 1066, 1060, 1129, 876, 1157, 824, 731, 702, 1069]], "totals": [279439, 2248829, 1106478, 352469, 166339, 157352, 101466, 74075, 76903, 25010, 11904]}, "placement": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[11250, 13650, 4836, 1575, 2954, 7010, 840, 0, 0, 1066, 3446, 371], [20612, 33495, 19438, 22993, 16441, 20452, 14704, 16267, 18696, 13877, 10507, 10014], [15726, 24632, 10599, 8305, 7725, 15619, 10704, 12542, 18466, 26064, 16412, 10863], [6145, 9179, 4219, 2505, 2284, 7877, 7798, 4260, 4254, 10082, 5755, 3225], [2551, 4015, 1848, 1533, 1156, 4040, 3977, 1494, 1796, 4652, 2620, 1478], [2918, 3914, 1783, 455, 487, 11890, 2582, 789, 1289, 2558, 1529, 1123], [205, 271, 281, 414, 378, 381, 342, 800, 1041, 3300, 1334, 803], [111, 136, 148, 254, 201, 191, 155, 233, 358, 314, 273, 225], [83, 131, 109, 156, 155, 174, 123, 174, 348, 269, 241, 146], [51, 45, 51, 98, 95, 101, 69, 127, 177, 121, 111, 98], [68, 93, 91, 167, 159, 128, 83, 109, 264, 183, 169, 142]], "totals": [46998, 217496, 177657, 67583, 31160, 31317, 9550, 2599, 2109, 1144, 1656]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "count"}</script>
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[947, 1345, 1315, 879, 738, 903, 1045, 1099, 951, 828, 866, 957], [1920, 2433, 2576, 2197, 1773, 1988, 2357, 2375, 2430, 2863, 3169, 3750], [2517, 3151, 3783, 3324, 3404, 4179, 4467, 3908, 3938, 4514, 5166, 6122], [1558, 1882, 2440, 2316, 1924, 2623, 2351, 2638, 2856, 2945, 3484, 4001], [1077, 1342, 1557, 1631, 1462, 1772, 1989, 1847, 1985, 2022, 2455, 2627], [512, 748, 941, 889, 832, 1233, 1312, 1265, 1525, 1662, 2170, 2192], [704, 832, 1005, 851, 710, 1068, 1215, 1165, 1430, 1625, 1660, 1790], [342, 359, 521, 395, 362, 513, 502, 585, 762, 734, 740, 810], [265, 310, 464, 291, 319, 382, 438, 477, 752, 576, 580, 601], [139, 181, 252, 191, 174, 237, 250, 276, 381, 360, 367, 338], [264, 279, 479, 349, 347, 392, 499, 440, 719, 729, 860, 634]], "totals": [11873, 29831, 48473, 31018, 21766, 15281, 14055, 6625, 5455, 3146, 5991]}, "vacancy": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[90283, 26478, 21545, 16715, 14716, 15651, 28651, 17001, 13569, 12477, 11560, 10793], [257751, 248109, 199774, 180447, 170724, 184429, 195708, 170645, 172251, 147023, 164396, 157572], [85045, 90447, 74231, 100785, 88459, 94479, 95448, 103172, 99608, 98849, 91590, 84365], [29854, 35248, 27136, 28782, 30315, 29348, 26810, 28303, 29040, 30299, 31942, 25392], [9633, 12332, 12644, 12662, 17003, 16535, 13104, 15273, 14950, 14798, 13260, 14145], [9653, 10256, 9782, 11523, 19900, 13296, 12766, 14048, 15425, 14190, 13585, 12928], [6801, 7564, 8469, 9899, 8909, 8342, 8284, 8445, 8640, 9323, 7857, 8933], [4755, 5994, 5905, 7739, 7058, 8113, 5556, 5938, 6026, 5890, 5184, 5917], [4324, 4717, 7386, 6467, 9764, 7463, 6940, 7923, 6097, 5141, 4951, 5730], [1767, 2259, 3069, 2519, 2418, 2376, 1894, 1921, 1930, 1577, 1634, 1646], [986, 1332, 972, 1066, 1060, 1129, 876, 1157, 824, 731, 702, 1069]], "totals": [279439, 2248829, 1106478, 352469, 166339, 157352, 101466, 74075, 76903, 25010, 11904]}, "placement": {"buckets": ["<RM1,500", "RM1,500-RM1,999", "RM2,000-RM2,999", "RM3,000-RM3,999", "RM4,000-RM4,999", "RM5,000-RM5,999", "RM6,000-RM7,999", "RM8,000-RM9,999", "RM10,000-RM12,999", "RM13,000-RM15,999", ">RM15,999"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[11250, 13650, 4836, 1575, 2954, 7010, 840, 0, 0, 1066, 3446, 371], [20612, 33495, 19438, 22993, 16441, 20452, 14704, 16267, 18696, 13877, 10507, 10014], [15726, 24632, 10599, 8305, 7725, 15619, 10704, 12542, 18466, 26064, 16412, 10863], [6145, 9179, 4219, 2505, 2284, 7877, 7798, 4260, 4254, 10082, 5755, 3225], [2551, 4015, 1848, 1533, 1156, 4040, 3977, 1494, 1796, 4652, 2620, 1478], [2918, 3914, 1783, 455, 487, 11890, 2582, 789, 1289, 2558, 1529, 1123], [205, 271, 281, 414, 378, 381, 342, 800, 1041, 3300, 1334, 803], [111, 136, 148, 254, 201, 191, 155, 233, 358, 314, 273, 225], [83, 131, 109, 156, 155, 174, 123, 174, 348, 269, 241, 146], [51, 45, 51, 98, 95, 101, 69, 127, 177, 121, 111, 98], [68, 93, 91, 167, 159, 128, 83, 109, 264, 183, 169, 142]], "totals": [46998, 217496, 177657, 67583, 31160, 31317, 9550, 2599, 2109, 1144, 1656]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "count", "viewModes": ["absolute"]}</script>
 <script>
   const P = JSON.parse(document.getElementById("payload").textContent);
   const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
@@ -270,39 +292,106 @@
     });
   }
 
+  // ----- view modes (absolute / qoq / yoy) -----
+  function computePct(matrix, lag) {
+    return matrix.map(row => row.map((v, j) => {
+      if (j < lag) return null;
+      const base = row[j - lag];
+      if (base === 0 || base === null) return null;
+      return ((v - base) / base) * 100;
+    }));
+  }
+
+  let currentView = "absolute";
+
+  function applyView(mode) {
+    currentView = mode;
+    Object.keys(P.datasets).forEach(ds => {
+      const chart = charts[ds];
+      if (!chart) return;
+      const orig = P.datasets[ds].matrix;
+      let newData;
+      if (mode === "qoq") newData = computePct(orig, 1);
+      else if (mode === "yoy") newData = computePct(orig, 4);
+      else newData = orig;
+
+      chart.data.datasets.forEach((dataset, i) => { dataset.data = newData[i]; });
+
+      const isPct = mode !== "absolute";
+      chart.options.scales.y.title.text = isPct ? "% change" : P.axis;
+      chart.options.scales.y.beginAtZero = !isPct;
+      chart.options.scales.y.ticks.callback = isPct
+        ? (v) => `${v.toFixed(0)}%`
+        : (v) => v.toLocaleString();
+      chart.options.plugins.tooltip.callbacks.label = isPct
+        ? (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y === null ? '—' : ctx.parsed.y.toFixed(1) + '%'}`
+        : (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`;
+      chart.update();
+      buildTable(ds);
+    });
+
+    document.querySelectorAll(".view-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.mode === mode);
+    });
+  }
+
+  function wireViewModes() {
+    document.querySelectorAll(".view-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyView(btn.dataset.mode));
+    });
+  }
+
   function buildTable(ds) {
     const d = P.datasets[ds];
     if (!d) return;
     const table = document.getElementById(`table_${ds}`);
 
+    const mode = currentView;
+    const isPct = mode !== "absolute";
+    const data = !isPct ? d.matrix
+      : computePct(d.matrix, mode === "qoq" ? 1 : 4);
+
+    const pctCell = (v) => v === null ? '<td class="zero">—</td>'
+      : `<td>${v >= 0 ? '+' : ''}${v.toFixed(1)}%</td>`;
+
     let thead = "<thead><tr><th>Bucket</th>";
     P.quarters.forEach(q => thead += `<th>${q}</th>`);
-    thead += "<th>Total</th></tr></thead>";
+    if (!isPct) thead += "<th>Total</th>";
+    thead += "</tr></thead>";
 
     let tbody = "<tbody>";
     const colTotals = new Array(P.quarters.length).fill(0);
     let grand = 0;
     d.buckets.forEach((b, i) => {
-      const row = d.matrix[i];
-      let rowSum = 0;
+      const row = data[i];
       let html = `<tr><td>${b}</td>`;
-      row.forEach((v, j) => {
-        colTotals[j] += v; rowSum += v;
-        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
-      });
-      grand += rowSum;
-      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      if (isPct) {
+        row.forEach(v => { html += pctCell(v); });
+      } else {
+        let rowSum = 0;
+        row.forEach((v, j) => {
+          colTotals[j] += v; rowSum += v;
+          html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+        });
+        grand += rowSum;
+        html += `<td><strong>${rowSum.toLocaleString()}</strong></td>`;
+      }
+      html += "</tr>";
       tbody += html;
     });
-    let trow = "<tr class='total'><td>TOTAL</td>";
-    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
-    trow += `<td>${grand.toLocaleString()}</td></tr>`;
-    tbody += trow + "</tbody>";
+    if (!isPct) {
+      let trow = "<tr class='total'><td>TOTAL</td>";
+      colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+      trow += `<td>${grand.toLocaleString()}</td></tr>`;
+      tbody += trow;
+    }
+    tbody += "</tbody>";
     table.innerHTML = thead + tbody;
   }
 
   Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
   wireToggles();
+  wireViewModes();
 </script>
 </body>
 </html>

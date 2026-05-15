@@ -68,6 +68,27 @@
   }
   .toggle-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
   .toggle-btn:active { background: #e0e7ff; }
+  .view-toolbar {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 12px; margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .view-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; margin-right: 4px;
+  }
+  .view-btn {
+    font-size: 12px; font-weight: 500; font-family: inherit;
+    padding: 6px 12px; border: 1px solid var(--line);
+    background: #fff; color: var(--ink);
+    border-radius: 4px; cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .view-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
+  .view-btn.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
   .chart-wrap { position: relative; height: 440px; }
   .table-toggle { margin-top: 14px; }
   .table-toggle summary {
@@ -115,6 +136,7 @@
     <nav class="dim-nav"><a href="gender.html">Gender</a> · <a href="age-group.html">Age Group</a> · <a href="industry.html">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html" class="active">Education Level</a> · <a href="salary.html">Salary Range</a></nav>
 
     <div class="explainer">Highest education level. Note: ~17% of Placement records carry 'Revision Stage' (unknown) for education and are excluded — see the data quality note at the bottom.</div>
+    
 
     <section class="card" data-dataset="loe">
       <header class="card-head">
@@ -196,7 +218,7 @@
     </p>
   </div>
 
-<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[531, 875, 940, 861, 747, 891, 865, 965, 945, 1133, 1243, 1512], [563, 822, 883, 870, 761, 942, 861, 1026, 1000, 1120, 1229, 1533], [3642, 4914, 5868, 5289, 4941, 6321, 6136, 5884, 6265, 6707, 7961, 9049], [258, 349, 372, 262, 218, 230, 410, 363, 372, 391, 411, 442], [2679, 3028, 3630, 3052, 2754, 3357, 4094, 3765, 4429, 4189, 5026, 5486], [2359, 2692, 3409, 2826, 2502, 3261, 3655, 3687, 4203, 4737, 5220, 5251], [330, 308, 469, 346, 307, 413, 504, 453, 580, 660, 717, 704], [24, 20, 32, 29, 31, 24, 34, 31, 37, 39, 53, 48]], "totals": [11508, 11610, 72977, 4078, 45489, 43802, 5791, 402]}, "vacancy": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[86617, 81883, 72843, 56801, 48011, 59431, 59279, 39834, 42726, 31128, 40470, 30201], [43308, 36281, 28245, 30753, 28425, 36538, 41906, 37115, 36734, 34707, 34789, 30746], [242507, 187623, 145404, 151842, 144493, 145301, 161287, 158656, 146327, 137173, 149571, 136917], [4709, 5076, 3755, 4374, 4183, 6893, 6514, 3936, 4485, 4570, 7093, 3367], [67646, 77185, 64410, 70159, 76751, 70121, 69921, 72250, 77266, 75629, 62260, 66863], [54944, 54957, 54618, 62855, 66827, 61397, 55798, 60386, 58835, 55190, 50732, 58371], [765, 1034, 1052, 1284, 1010, 954, 869, 912, 1105, 1279, 944, 1465], [356, 697, 586, 536, 626, 526, 463, 737, 882, 622, 802, 554]], "totals": [649224, 419547, 1907101, 58955, 850461, 694910, 12673, 7387]}, "placement": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[721, 1188, 1544, 1254, 2005, 1710, 607, 480, 553, 620, 367, 340], [1526, 2383, 1325, 1168, 1216, 2248, 1085, 996, 944, 1114, 690, 558], [18466, 26621, 17614, 15666, 14113, 25686, 14780, 13512, 14320, 16027, 9903, 9266], [1218, 2081, 1173, 861, 1006, 2048, 1188, 1229, 1442, 1981, 1388, 876], [9335, 16066, 9126, 8402, 7815, 16221, 9238, 8194, 10996, 14875, 9146, 6557], [10409, 20490, 10266, 9374, 8996, 15583, 8004, 9967, 17420, 23151, 13373, 9988], [811, 1495, 679, 994, 619, 1799, 687, 505, 849, 1721, 904, 701], [75, 126, 49, 30, 41, 209, 57, 28, 63, 107, 76, 60]], "totals": [11389, 15253, 195974, 16491, 125971, 157021, 11764, 921]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "count"}</script>
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[531, 875, 940, 861, 747, 891, 865, 965, 945, 1133, 1243, 1512], [563, 822, 883, 870, 761, 942, 861, 1026, 1000, 1120, 1229, 1533], [3642, 4914, 5868, 5289, 4941, 6321, 6136, 5884, 6265, 6707, 7961, 9049], [258, 349, 372, 262, 218, 230, 410, 363, 372, 391, 411, 442], [2679, 3028, 3630, 3052, 2754, 3357, 4094, 3765, 4429, 4189, 5026, 5486], [2359, 2692, 3409, 2826, 2502, 3261, 3655, 3687, 4203, 4737, 5220, 5251], [330, 308, 469, 346, 307, 413, 504, 453, 580, 660, 717, 704], [24, 20, 32, 29, 31, 24, 34, 31, 37, 39, 53, 48]], "totals": [11508, 11610, 72977, 4078, 45489, 43802, 5791, 402]}, "vacancy": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[86617, 81883, 72843, 56801, 48011, 59431, 59279, 39834, 42726, 31128, 40470, 30201], [43308, 36281, 28245, 30753, 28425, 36538, 41906, 37115, 36734, 34707, 34789, 30746], [242507, 187623, 145404, 151842, 144493, 145301, 161287, 158656, 146327, 137173, 149571, 136917], [4709, 5076, 3755, 4374, 4183, 6893, 6514, 3936, 4485, 4570, 7093, 3367], [67646, 77185, 64410, 70159, 76751, 70121, 69921, 72250, 77266, 75629, 62260, 66863], [54944, 54957, 54618, 62855, 66827, 61397, 55798, 60386, 58835, 55190, 50732, 58371], [765, 1034, 1052, 1284, 1010, 954, 869, 912, 1105, 1279, 944, 1465], [356, 697, 586, 536, 626, 526, 463, 737, 882, 622, 802, 554]], "totals": [649224, 419547, 1907101, 58955, 850461, 694910, 12673, 7387]}, "placement": {"buckets": ["Primary", "PMR/PT3", "SPM (O-Level)", "STPM (A-Level)", "Diploma", "Bachelor", "Master", "PhD"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8"], "matrix": [[721, 1188, 1544, 1254, 2005, 1710, 607, 480, 553, 620, 367, 340], [1526, 2383, 1325, 1168, 1216, 2248, 1085, 996, 944, 1114, 690, 558], [18466, 26621, 17614, 15666, 14113, 25686, 14780, 13512, 14320, 16027, 9903, 9266], [1218, 2081, 1173, 861, 1006, 2048, 1188, 1229, 1442, 1981, 1388, 876], [9335, 16066, 9126, 8402, 7815, 16221, 9238, 8194, 10996, 14875, 9146, 6557], [10409, 20490, 10266, 9374, 8996, 15583, 8004, 9967, 17420, 23151, 13373, 9988], [811, 1495, 679, 994, 619, 1799, 687, 505, 849, 1721, 904, 701], [75, 126, 49, 30, 41, 209, 57, 28, 63, 107, 76, 60]], "totals": [11389, 15253, 195974, 16491, 125971, 157021, 11764, 921]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "count", "viewModes": ["absolute"]}</script>
 <script>
   const P = JSON.parse(document.getElementById("payload").textContent);
   const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
@@ -270,39 +292,106 @@
     });
   }
 
+  // ----- view modes (absolute / qoq / yoy) -----
+  function computePct(matrix, lag) {
+    return matrix.map(row => row.map((v, j) => {
+      if (j < lag) return null;
+      const base = row[j - lag];
+      if (base === 0 || base === null) return null;
+      return ((v - base) / base) * 100;
+    }));
+  }
+
+  let currentView = "absolute";
+
+  function applyView(mode) {
+    currentView = mode;
+    Object.keys(P.datasets).forEach(ds => {
+      const chart = charts[ds];
+      if (!chart) return;
+      const orig = P.datasets[ds].matrix;
+      let newData;
+      if (mode === "qoq") newData = computePct(orig, 1);
+      else if (mode === "yoy") newData = computePct(orig, 4);
+      else newData = orig;
+
+      chart.data.datasets.forEach((dataset, i) => { dataset.data = newData[i]; });
+
+      const isPct = mode !== "absolute";
+      chart.options.scales.y.title.text = isPct ? "% change" : P.axis;
+      chart.options.scales.y.beginAtZero = !isPct;
+      chart.options.scales.y.ticks.callback = isPct
+        ? (v) => `${v.toFixed(0)}%`
+        : (v) => v.toLocaleString();
+      chart.options.plugins.tooltip.callbacks.label = isPct
+        ? (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y === null ? '—' : ctx.parsed.y.toFixed(1) + '%'}`
+        : (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`;
+      chart.update();
+      buildTable(ds);
+    });
+
+    document.querySelectorAll(".view-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.mode === mode);
+    });
+  }
+
+  function wireViewModes() {
+    document.querySelectorAll(".view-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyView(btn.dataset.mode));
+    });
+  }
+
   function buildTable(ds) {
     const d = P.datasets[ds];
     if (!d) return;
     const table = document.getElementById(`table_${ds}`);
 
+    const mode = currentView;
+    const isPct = mode !== "absolute";
+    const data = !isPct ? d.matrix
+      : computePct(d.matrix, mode === "qoq" ? 1 : 4);
+
+    const pctCell = (v) => v === null ? '<td class="zero">—</td>'
+      : `<td>${v >= 0 ? '+' : ''}${v.toFixed(1)}%</td>`;
+
     let thead = "<thead><tr><th>Bucket</th>";
     P.quarters.forEach(q => thead += `<th>${q}</th>`);
-    thead += "<th>Total</th></tr></thead>";
+    if (!isPct) thead += "<th>Total</th>";
+    thead += "</tr></thead>";
 
     let tbody = "<tbody>";
     const colTotals = new Array(P.quarters.length).fill(0);
     let grand = 0;
     d.buckets.forEach((b, i) => {
-      const row = d.matrix[i];
-      let rowSum = 0;
+      const row = data[i];
       let html = `<tr><td>${b}</td>`;
-      row.forEach((v, j) => {
-        colTotals[j] += v; rowSum += v;
-        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
-      });
-      grand += rowSum;
-      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      if (isPct) {
+        row.forEach(v => { html += pctCell(v); });
+      } else {
+        let rowSum = 0;
+        row.forEach((v, j) => {
+          colTotals[j] += v; rowSum += v;
+          html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+        });
+        grand += rowSum;
+        html += `<td><strong>${rowSum.toLocaleString()}</strong></td>`;
+      }
+      html += "</tr>";
       tbody += html;
     });
-    let trow = "<tr class='total'><td>TOTAL</td>";
-    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
-    trow += `<td>${grand.toLocaleString()}</td></tr>`;
-    tbody += trow + "</tbody>";
+    if (!isPct) {
+      let trow = "<tr class='total'><td>TOTAL</td>";
+      colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+      trow += `<td>${grand.toLocaleString()}</td></tr>`;
+      tbody += trow;
+    }
+    tbody += "</tbody>";
     table.innerHTML = thead + tbody;
   }
 
   Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
   wireToggles();
+  wireViewModes();
 </script>
 </body>
 </html>

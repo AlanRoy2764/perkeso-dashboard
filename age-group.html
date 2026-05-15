@@ -68,6 +68,27 @@
   }
   .toggle-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
   .toggle-btn:active { background: #e0e7ff; }
+  .view-toolbar {
+    display: flex; align-items: center; gap: 8px;
+    background: #fff; border: 1px solid var(--line); border-radius: 8px;
+    padding: 8px 12px; margin-bottom: 20px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+  }
+  .view-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); font-weight: 600; margin-right: 4px;
+  }
+  .view-btn {
+    font-size: 12px; font-weight: 500; font-family: inherit;
+    padding: 6px 12px; border: 1px solid var(--line);
+    background: #fff; color: var(--ink);
+    border-radius: 4px; cursor: pointer;
+    transition: background 0.12s, border-color 0.12s, color 0.12s;
+  }
+  .view-btn:hover { background: var(--hover); border-color: var(--accent); color: var(--accent); }
+  .view-btn.active {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+  }
   .chart-wrap { position: relative; height: 440px; }
   .table-toggle { margin-top: 14px; }
   .table-toggle summary {
@@ -115,6 +136,7 @@
     <nav class="dim-nav"><a href="gender.html">Gender</a> · <a href="age-group.html" class="active">Age Group</a> · <a href="industry.html">MSIC Industry (Section)</a> · <a href="state.html">State</a> · <a href="education.html">Education Level</a> · <a href="salary.html">Salary Range</a></nav>
 
     <div class="explainer">5-year age bands. Vacancy data has no age field. All cohorts are shown — click any legend entry to isolate or hide a line.</div>
+    
 
     <section class="card" data-dataset="loe">
       <header class="card-head">
@@ -174,7 +196,7 @@
     </p>
   </div>
 
-<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["<15", "15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 - 64"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [73, 89, 112, 66, 58, 67, 50, 40, 43, 50, 55, 92], [1194, 1348, 1451, 1176, 1093, 1698, 1509, 1124, 1138, 1123, 1247, 1828], [2013, 2587, 2844, 2514, 2142, 3100, 3305, 2865, 3184, 3311, 3686, 4428], [1744, 2111, 2729, 2144, 1938, 2660, 3021, 2767, 3065, 3459, 3788, 4218], [1479, 1779, 2283, 1916, 1725, 2057, 2289, 2319, 2721, 2799, 3326, 3351], [1181, 1477, 1925, 1598, 1441, 1711, 1789, 2001, 2393, 2393, 2733, 2998], [1102, 1390, 1757, 1651, 1486, 1584, 1783, 1798, 2152, 2343, 2578, 2726], [949, 1382, 1522, 1410, 1403, 1549, 1707, 1779, 1937, 2054, 2694, 2473], [635, 820, 962, 1041, 948, 988, 1082, 1436, 1157, 1400, 1704, 1831], [16, 25, 18, 19, 27, 25, 24, 45, 41, 44, 49, 79]], "totals": [1, 795, 15929, 35979, 33644, 28044, 23640, 22350, 20859, 14004, 412]}, "placement": {"buckets": ["<15", "15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 - 64", ">64"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "matrix": [[0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 0, 0], [1153, 2447, 1962, 97, 207, 673, 468, 76, 154, 428, 544, 415], [18818, 26891, 14225, 6631, 6920, 21735, 14897, 9051, 7459, 9807, 9950, 6916], [20147, 31013, 13234, 14346, 11943, 17394, 11678, 16899, 23122, 24941, 16955, 10498], [8721, 13719, 6150, 7545, 6314, 4961, 3399, 6821, 9037, 14224, 8311, 5528], [4837, 7496, 3597, 4245, 3881, 11636, 6556, 4072, 4939, 7066, 4661, 3288], [3154, 4536, 2319, 2602, 2517, 9289, 4746, 2297, 2862, 4047, 3114, 2228], [2137, 3079, 1666, 1729, 1781, 6069, 2905, 1518, 1881, 2722, 2166, 1474], [1345, 1972, 1074, 1076, 1105, 3654, 1696, 999, 1420, 1604, 1539, 926], [685, 980, 601, 542, 554, 1690, 809, 544, 714, 749, 987, 412], [348, 451, 319, 215, 1257, 1228, 203, 153, 162, 187, 301, 78], [0, 0, 0, 107, 2491, 937, 86, 59, 22, 19, 14, 6]], "totals": [5, 8624, 153300, 212170, 94730, 66274, 43711, 29127, 18410, 9267, 4902, 3741]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "claims / placements"}</script>
+<script id="payload" type="application/json">{"quarters": ["2023-Q2", "2023-Q3", "2023-Q4", "2024-Q1", "2024-Q2", "2024-Q3", "2024-Q4", "2025-Q1", "2025-Q2", "2025-Q3", "2025-Q4", "2026-Q1"], "palette": ["#1d4ed8", "#dc2626", "#059669", "#d97706", "#9333ea", "#0891b2", "#65a30d", "#a16207", "#0ea5e9", "#be185d", "#16a34a", "#7c3aed", "#ea580c", "#0f766e", "#ca8a04", "#475569", "#b91c1c", "#15803d", "#1e3a8a", "#86198f", "#374151"], "datasets": {"loe": {"buckets": ["<15", "15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 - 64"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"], "matrix": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [73, 89, 112, 66, 58, 67, 50, 40, 43, 50, 55, 92], [1194, 1348, 1451, 1176, 1093, 1698, 1509, 1124, 1138, 1123, 1247, 1828], [2013, 2587, 2844, 2514, 2142, 3100, 3305, 2865, 3184, 3311, 3686, 4428], [1744, 2111, 2729, 2144, 1938, 2660, 3021, 2767, 3065, 3459, 3788, 4218], [1479, 1779, 2283, 1916, 1725, 2057, 2289, 2319, 2721, 2799, 3326, 3351], [1181, 1477, 1925, 1598, 1441, 1711, 1789, 2001, 2393, 2393, 2733, 2998], [1102, 1390, 1757, 1651, 1486, 1584, 1783, 1798, 2152, 2343, 2578, 2726], [949, 1382, 1522, 1410, 1403, 1549, 1707, 1779, 1937, 2054, 2694, 2473], [635, 820, 962, 1041, 948, 988, 1082, 1436, 1157, 1400, 1704, 1831], [16, 25, 18, 19, 27, 25, 24, 45, 41, 44, 49, 79]], "totals": [1, 795, 15929, 35979, 33644, 28044, 23640, 22350, 20859, 14004, 412]}, "placement": {"buckets": ["<15", "15 - 19", "20 - 24", "25 - 29", "30 - 34", "35 - 39", "40 - 44", "45 - 49", "50 - 54", "55 - 59", "60 - 64", ">64"], "ranks": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"], "matrix": [[0, 0, 0, 1, 3, 0, 1, 0, 0, 0, 0, 0], [1153, 2447, 1962, 97, 207, 673, 468, 76, 154, 428, 544, 415], [18818, 26891, 14225, 6631, 6920, 21735, 14897, 9051, 7459, 9807, 9950, 6916], [20147, 31013, 13234, 14346, 11943, 17394, 11678, 16899, 23122, 24941, 16955, 10498], [8721, 13719, 6150, 7545, 6314, 4961, 3399, 6821, 9037, 14224, 8311, 5528], [4837, 7496, 3597, 4245, 3881, 11636, 6556, 4072, 4939, 7066, 4661, 3288], [3154, 4536, 2319, 2602, 2517, 9289, 4746, 2297, 2862, 4047, 3114, 2228], [2137, 3079, 1666, 1729, 1781, 6069, 2905, 1518, 1881, 2722, 2166, 1474], [1345, 1972, 1074, 1076, 1105, 3654, 1696, 999, 1420, 1604, 1539, 926], [685, 980, 601, 542, 554, 1690, 809, 544, 714, 749, 987, 412], [348, 451, 319, 215, 1257, 1228, 203, 153, 162, 187, 301, 78], [0, 0, 0, 107, 2491, 937, 86, 59, 22, 19, 14, 6]], "totals": [5, 8624, 153300, 212170, 94730, 66274, 43711, 29127, 18410, 9267, 4902, 3741]}}, "datasetLabels": {"loe": "Loss of Employment (EIS claims)", "vacancy": "Job Vacancies (MyFutureJobs)", "placement": "Job Placements (Career Fairs)"}, "topNVisible": null, "hiddenBuckets": [], "axis": "claims / placements", "viewModes": ["absolute"]}</script>
 <script>
   const P = JSON.parse(document.getElementById("payload").textContent);
   const fmt = (n) => n === 0 ? "—" : n.toLocaleString();
@@ -248,39 +270,106 @@
     });
   }
 
+  // ----- view modes (absolute / qoq / yoy) -----
+  function computePct(matrix, lag) {
+    return matrix.map(row => row.map((v, j) => {
+      if (j < lag) return null;
+      const base = row[j - lag];
+      if (base === 0 || base === null) return null;
+      return ((v - base) / base) * 100;
+    }));
+  }
+
+  let currentView = "absolute";
+
+  function applyView(mode) {
+    currentView = mode;
+    Object.keys(P.datasets).forEach(ds => {
+      const chart = charts[ds];
+      if (!chart) return;
+      const orig = P.datasets[ds].matrix;
+      let newData;
+      if (mode === "qoq") newData = computePct(orig, 1);
+      else if (mode === "yoy") newData = computePct(orig, 4);
+      else newData = orig;
+
+      chart.data.datasets.forEach((dataset, i) => { dataset.data = newData[i]; });
+
+      const isPct = mode !== "absolute";
+      chart.options.scales.y.title.text = isPct ? "% change" : P.axis;
+      chart.options.scales.y.beginAtZero = !isPct;
+      chart.options.scales.y.ticks.callback = isPct
+        ? (v) => `${v.toFixed(0)}%`
+        : (v) => v.toLocaleString();
+      chart.options.plugins.tooltip.callbacks.label = isPct
+        ? (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y === null ? '—' : ctx.parsed.y.toFixed(1) + '%'}`
+        : (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y.toLocaleString()}`;
+      chart.update();
+      buildTable(ds);
+    });
+
+    document.querySelectorAll(".view-btn").forEach(b => {
+      b.classList.toggle("active", b.dataset.mode === mode);
+    });
+  }
+
+  function wireViewModes() {
+    document.querySelectorAll(".view-btn").forEach(btn => {
+      btn.addEventListener("click", () => applyView(btn.dataset.mode));
+    });
+  }
+
   function buildTable(ds) {
     const d = P.datasets[ds];
     if (!d) return;
     const table = document.getElementById(`table_${ds}`);
 
+    const mode = currentView;
+    const isPct = mode !== "absolute";
+    const data = !isPct ? d.matrix
+      : computePct(d.matrix, mode === "qoq" ? 1 : 4);
+
+    const pctCell = (v) => v === null ? '<td class="zero">—</td>'
+      : `<td>${v >= 0 ? '+' : ''}${v.toFixed(1)}%</td>`;
+
     let thead = "<thead><tr><th>Bucket</th>";
     P.quarters.forEach(q => thead += `<th>${q}</th>`);
-    thead += "<th>Total</th></tr></thead>";
+    if (!isPct) thead += "<th>Total</th>";
+    thead += "</tr></thead>";
 
     let tbody = "<tbody>";
     const colTotals = new Array(P.quarters.length).fill(0);
     let grand = 0;
     d.buckets.forEach((b, i) => {
-      const row = d.matrix[i];
-      let rowSum = 0;
+      const row = data[i];
       let html = `<tr><td>${b}</td>`;
-      row.forEach((v, j) => {
-        colTotals[j] += v; rowSum += v;
-        html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
-      });
-      grand += rowSum;
-      html += `<td><strong>${rowSum.toLocaleString()}</strong></td></tr>`;
+      if (isPct) {
+        row.forEach(v => { html += pctCell(v); });
+      } else {
+        let rowSum = 0;
+        row.forEach((v, j) => {
+          colTotals[j] += v; rowSum += v;
+          html += `<td class="${v === 0 ? 'zero' : ''}">${fmt(v)}</td>`;
+        });
+        grand += rowSum;
+        html += `<td><strong>${rowSum.toLocaleString()}</strong></td>`;
+      }
+      html += "</tr>";
       tbody += html;
     });
-    let trow = "<tr class='total'><td>TOTAL</td>";
-    colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
-    trow += `<td>${grand.toLocaleString()}</td></tr>`;
-    tbody += trow + "</tbody>";
+    if (!isPct) {
+      let trow = "<tr class='total'><td>TOTAL</td>";
+      colTotals.forEach(v => trow += `<td>${v.toLocaleString()}</td>`);
+      trow += `<td>${grand.toLocaleString()}</td></tr>`;
+      tbody += trow;
+    }
+    tbody += "</tbody>";
     table.innerHTML = thead + tbody;
   }
 
   Object.keys(P.datasets).forEach(ds => { buildChart(ds); buildTable(ds); });
   wireToggles();
+  wireViewModes();
 </script>
 </body>
 </html>
